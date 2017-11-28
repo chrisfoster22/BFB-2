@@ -22,7 +22,7 @@ const Products = {
             "outdoor": [
                 {
                     name: "lip balm",
-                    productId: ""
+                    productId: "382576164897"
                 },
                 {
                     name: "sunscreen",
@@ -34,7 +34,7 @@ const Products = {
                 },
                 {
                     name: "tick repellent",
-                    productId: ""
+                    productId: "10011229454"
                 },
                 {
                     name: "perfume",
@@ -108,7 +108,7 @@ const Products = {
                 },
                 {
                     name: "tick repellent",
-                    productId: ""
+                    productId: "10011229454"
                 },
                 {
                     name: "flea repellent",
@@ -150,7 +150,7 @@ const Products = {
                 },
                 {
                     name: "tick repellent",
-                    productId: ""
+                    productId: "10011229454"
                 },
                 {
                     name: "flea repellent",
@@ -180,7 +180,7 @@ const Products = {
                 },
                 {
                     name: "tick repellent",
-                    productId: ""
+                    productId: "10011229454"
                 },
                 {
                     name: "flea repellent",
@@ -305,66 +305,4 @@ const Products = {
     }
 }
 
-const allProducts = [
-    "sugar scrub",
-    "salt scrub",
-    "bath bombs",
-    "bath salts",
-    "lip balm",
-    "sunscreen",
-    "mosquito repellent",
-    "tick repellent",
-    "perfume",
-    "deodorant spray",
-    "flea repellent",
-    "itch relief spray",
-    "paw balm",
-    "skin healing balm",
-    "facial masks",
-    "facial serum",
-    "lip balm",
-    "tooth polish",
-    "toner refresher",
-    "facial cleanser",
-    "toothpaste",
-    "detangling spray",
-    "dog ear wash",
-    "dog tear stain solution",
-    "skin healing balm",
-    "dog calming spray",
-    "body butter"
-]
-
-const icons = {
-    "sugar scrub": "",
-    "salt scrub": "",
-    "bath bombs": "",
-    "bath salts": "",
-    "lip balm": "",
-    "sunscreen": "",
-    "mosquito repellent": "",
-    "tick repellent": "",
-    "perfume": "",
-    "deodorant spray": "",
-    "flea repellent": "",
-    "itch relief spray": "",
-    "paw balm": "",
-    "skin healing balm": "",
-    "facial masks": "",
-    "facial serum": "",
-    "lip balm": "",
-    "tooth polish": "",
-    "toner refresher": "",
-    "facial cleanser": "",
-    "toothpaste": "",
-    "detangling spray": "",
-    "dog ear wash": "",
-    "dog tear stain solution": "",
-    "skin healing balm": "",
-    "dog calming spray": "",
-    "body butter": ""
-}
-
 export default Products;
-
-// chamomile,cinnamon,eucalyptus,frankincense,grapefruit,lavender,lemon,lemongrass,lime,marjoram,myrrh,orange,peppermint,rose,spearmint,tangerine,vanilla,vetiver,wintergreen,ylang ylang,unscented

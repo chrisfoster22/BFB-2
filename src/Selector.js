@@ -5,8 +5,6 @@ export default class Selector extends Component {
 
     render() {
         
-        console.log(this.props.step.type === "product");
-        
         if (this.props.step.type === "product") {
             console.log(this.props.options);
             return this.renderProducts();

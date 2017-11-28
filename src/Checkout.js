@@ -12,10 +12,10 @@ export default class Checkout extends Component {
     constructor(props) {
         super(props);
         this.state = this.props.selection;
+        this.getProduct = this.getProduct.bind(this)
     }
     
     componentWillMount() {
-        console.log(this.props);
         this.getProduct(this.props.selection);
     }
     
@@ -27,18 +27,25 @@ export default class Checkout extends Component {
     
     getProduct(selection) {
         shopClient.fetchProduct(selection.product.productId)
-        .then(function (product) {
-            console.log(product.variants);
+        .then((product) => {
+            console.log(product);
             var variant = product.variants[0];
             var quantity = 1;
             var checkoutURL;
-            console.log(variant.id);
-            checkoutURL = variant.checkoutUrl(quantity);
-            window.open(("https://www.bestfriendbeauty.org/cart/add?id=" + variant.id));
+            var note = this.formatNote(selection);
+            console.log(note);
+            
+            // checkoutURL = variant.checkoutUrl(quantity);
+            // window.open(("https://www.bestfriendbeauty.org/cart/add?id=" + variant.id));
+            window.open(("https://www.bestfriendbeauty.org/cart/add?id=" + variant.id + "&note=" + note));
         })
-        .catch(function () {
-        console.log('Request failed');
+        .catch(function (e) {
+        console.log(e);
         });
+    }
+    
+    formatNote(selection) {
+      return `scents: ${selection.scents.join(', ')}%0Abutters: ${selection.butters.join(', ')}%0Aoils: ${selection.oils.join(', ')}%0Aboosters: ${selection.boosters.join(', ')}`
     }
     
 }
