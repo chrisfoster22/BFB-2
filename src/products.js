@@ -2,142 +2,304 @@ const Products = {
     "products": {
         "person": {
             "bath": [
-                "sugar scrub",
-                "salt scrub",
-                "bath bombs",
-                "bath salts"
+                {
+                    name: "sugar scrub",
+                    productId: "381797826593"
+                },
+                {
+                    name: "salt scrub",
+                    productId: "381798711329"
+                },
+                {
+                    name: "bath bombs",
+                    productId: "381799596065"
+                },
+                {
+                    name: "bath salts",
+                    productId: "382571348001"
+                }
             ],
             "outdoor": [
-                "lip balm",
-                "sunscreen",
-                "mosquito repellent",
-                "tick repellent",
-                "perfume"
+                {
+                    name: "lip balm",
+                    productId: ""
+                },
+                {
+                    name: "sunscreen",
+                    productId: "382580785185"
+                },
+                {
+                    name: "mosquito repellent",
+                    productId: ""
+                },
+                {
+                    name: "tick repellent",
+                    productId: ""
+                },
+                {
+                    name: "perfume",
+                    productId: "382584389665"
+                }
             ],
-            "faceMouth": [
-                "facial masks",
-                "facial serum",
-                "lip balm",
-                "tooth polish",
-                "toner refresher",
-                "facial cleanser"
+            "face/mouth": [
+                {
+                    name: "facial masks",
+                    productId: "382586978337"
+                },
+                {
+                    name: "facial serum",
+                    productId: "382591860769"
+                },
+                {
+                    name: "lip balm",
+                    productId: "382576164897"
+                },
+                {
+                    name: "tooth polish",
+                    productId: "382594383905"
+                },
+                {
+                    name: "toner refresher",
+                    productId: "382597201953"
+                },
+                {
+                    name: "facial cleanser",
+                    productId: "382599135265"
+                }
             ],
             "body": [
-                "body butter",
-                "sugar scrub",
-                "salt scrub",
-                "sunscreen"
+                {
+                    name: "body butter",
+                    productId: "381794975777"
+                },
+                {
+                    name: "sugar scrub",
+                    productId: "381797826593"
+                },
+                {
+                    name: "salt scrub",
+                    productId: "381798711329"
+                },
+                {
+                    name: "sunscreen",
+                    productId: "382580785185"
+                },
+                {
+                    name: "deodorant pit paste",
+                    productId: "382736629793"
+                }
             ]
         },
         "dog": {
             "bath": [
-                "bath bombs"
+                {
+                    name: "bath bombs",
+                    productId: "382764089377"
+                }
             ],
             "outdoor": [
-                "deodorant spray",
-                "mosquito repellent",
-                "tick repellent",
-                "flea repellent",
-                "itch relief spray",
-                "paw balm",
-                "skin healing balm"
+                {
+                    name: "deodorant spray",
+                    productId: "382768676897"
+                },
+                {
+                    name: "mosquito repellent",
+                    productId: ""
+                },
+                {
+                    name: "tick repellent",
+                    productId: ""
+                },
+                {
+                    name: "flea repellent",
+                    productId: ""
+                },
+                {
+                    name: "itch relief spray",
+                    productId: ""
+                },
+                {
+                    name: "paw balm",
+                    productId: "382777098273"
+                },
+                {
+                    name: "skin healing balm",
+                    productId: "382780571681"
+                }
             ],
-            "faceMouth": [
-                "toothpaste",
-                "detangling spray",
-                "dog ear wash",
-                "dog tear stain solution",
-                "skin healing balm",
-                "tick repellent",
-                "flea repellent",
-                "dog calming spray",
-                "itch relief spray"
+            "face/mouth": [
+                {
+                    name: "toothpaste",
+                    productId: "382787387425"
+                },
+                {
+                    name: "detangling spray",
+                    productId: ""
+                },
+                {
+                    name: "dog ear wash",
+                    productId: ""
+                },
+                {
+                    name: "dog tear stain solution",
+                    productId: ""
+                },
+                {
+                    name: "skin healing balm",
+                    productId: "382780571681"
+                },
+                {
+                    name: "tick repellent",
+                    productId: ""
+                },
+                {
+                    name: "flea repellent",
+                    productId: ""
+                },
+                {
+                    name: "dog calming spray",
+                    productId: ""
+                },
+                {
+                    name: "itch relief spray",
+                    productId: ""
+                }
             ],
             "body": [
-                "detangling spray",
-                "dog ear wash",
-                "dog tear stain solution",
-                "tick repellent",
-                "flea repellent",
-                "itch relief spray",
-                "deodorant spray",
-                "mosquito repellent",
-                "paw balm",
-                "skin healing balm"
+                {
+                    name: "detangling spray",
+                    productId: ""
+                },
+                {
+                    name: "dog ear wash",
+                    productId: ""
+                },
+                {
+                    name: "dog tear stain solution",
+                    productId: ""
+                },
+                {
+                    name: "tick repellent",
+                    productId: ""
+                },
+                {
+                    name: "flea repellent",
+                    productId: ""
+                },
+                {
+                    name: "itch relief spray",
+                    productId: ""
+                },
+                {
+                    name: "deodorant spray",
+                    productId: ""
+                },
+                {
+                    name: "mosquito repellent",
+                    productId: ""
+                },
+                {
+                    name: "paw balm",
+                    productId: ""
+                },
+                {
+                    name: "skin healing balm",
+                    productId: "382780571681"
+                }
             ]
         }
     },
     "options": {
-        "scents": [
-            "chamomile",
-            "cinnamon",
-            "eucalyptus",
-            "frankincense",
-            "grapefruit",
-            "lavender",
-            "lemon",
-            "lemongrass",
-            "lime",
-            "marjoram",
-            "myrrh",
-            "orange",
-            "peppermint",
-            "rose",
-            "spearmint",
-            "tangerine",
-            "vanilla",
-            "vetiver",
-            "wintergreen",
-            "ylang ylang",
-            "unscented"
-        ],
-        "butters": [
-            "cocoa",
-            "kokum",
-            "mango",
-            "shea",
-            "none"
-        ],
-        "oils": [
-            "avocado",
-            "coconut",
-            "jojoba",
-            "olive",
-            "sweet almond",
-            "none"
-        ],
-        "boosters": [
-            "calendula",
-            "carrot seed",
-            "chickweed",
-            "dandelion",
-            "matcha green tea",
-            "raspberry seed",
-            "sea buckhorn",
-            "turmeric",
-            "valerian",
-            "none"
-        ],
-        "exclude": {
+        "person": {
             "scents": [
+                "chamomile",
+                "cinnamon",
+                "eucalyptus",
+                "frankincense",
+                "grapefruit",
+                "lavender",
+                "lemon",
+                "lemongrass",
+                "lime",
+                "marjoram",
+                "myrrh",
+                "orange",
+                "peppermint",
                 "rose",
                 "spearmint",
-                "lemongrass",
                 "tangerine",
-                "wintergreen",
+                "vanilla",
                 "vetiver",
-                "ylang ylang"
+                "wintergreen",
+                "ylang ylang",
+                "unscented"
             ],
             "butters": [
-                "cocoa"
+                "cocoa",
+                "kokum",
+                "mango",
+                "shea",
+                "none"
             ],
             "oils": [
                 "avocado",
-                "jojoba"
+                "coconut",
+                "jojoba",
+                "olive",
+                "sweet almond",
+                "none"
             ],
-            "health boosts": [
+            "boosters": [
+                "calendula",
+                "carrot seed",
+                "chickweed",
+                "dandelion",
                 "matcha green tea",
-                "valerian"
+                "raspberry seed",
+                "sea buckhorn",
+                "turmeric",
+                "valerian",
+                "none"
+            ]
+        },
+        "dog": {
+            "scents": [
+                "chamomile",
+                "cinnamon",
+                "eucalyptus",
+                "frankincense",
+                "grapefruit",
+                "lavender",
+                "lemon",
+                "lime",
+                "marjoram",
+                "myrrh",
+                "orange",
+                "peppermint",
+                "vanilla",
+                "unscented"
+            ],
+            "butters": [
+                "kokum",
+                "mango",
+                "shea",
+                "none"
+            ],
+            "oils": [
+                "coconut",
+                "olive",
+                "sweet almond",
+                "none"
+            ],
+            "boosters": [
+                "calendula",
+                "carrot seed",
+                "chickweed",
+                "dandelion",
+                "raspberry seed",
+                "sea buckhorn",
+                "turmeric",
+                "none"
             ]
         }
     }
@@ -204,3 +366,5 @@ const icons = {
 }
 
 export default Products;
+
+// chamomile,cinnamon,eucalyptus,frankincense,grapefruit,lavender,lemon,lemongrass,lime,marjoram,myrrh,orange,peppermint,rose,spearmint,tangerine,vanilla,vetiver,wintergreen,ylang ylang,unscented

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Selector from './Selector';
 import Products from './products';
+import Checkout from './Checkout';
 
 class App extends Component {
 
@@ -20,6 +21,9 @@ class App extends Component {
                 "boosters": []
             },
             steps: [
+                {
+                  message: "Get started!"
+                },
                 {
                     message: "Who is this for?",
                     type: "recipient",
@@ -65,11 +69,29 @@ class App extends Component {
     }
 
     render() {
+      
+        if (this.state.currentStep === 8) {
+            return(
+                <div>
+                    <Checkout selection={this.state.selection} />
+                </div>
+            )
+        }
+        
+        let currentStep = this.state.steps[this.state.currentStep];
+      
         return (
             <div className="App">
                 <header className="App-header">
                 </header>
-                <Selector step={this.state.steps[this.state.currentStep]} options={this.getOptions.bind(this)} />
+                <Selector
+                step={currentStep}
+                options={this.getOptions()}
+                nextStep={this.nextStep.bind(this)}
+                chooseProduct={this.chooseProduct.bind(this)}
+                unChooseProduct={this.unChooseProduct.bind(this)}
+                prevStep={this.prevStep.bind(this)}
+                selection={this.state.selection[currentStep.type]} />
             </div>
         );
     }
@@ -77,16 +99,54 @@ class App extends Component {
     nextStep() {
         this.setState({currentStep: (this.state.currentStep + 1)})
     }
+    
+    prevStep() {
+        console.log(this.state.currentStep);
+        this.setState({currentStep: (this.state.currentStep - 1)})
+    }
+    
+    chooseProduct(step, option, isArray) {
+        let newSelection = {...this.state.selection};
+        if (isArray) {
+            if (["none", "unscented"].indexOf(option) > -1) {
+                newSelection[step] = [option];
+            } else {
+                newSelection[step].push(option);
+            }
+        } else {
+            newSelection[step] = option;  
+        }
+        
+        let newSteps = {...this.state.steps}
+        newSteps[this.state.currentStep].selection = newSelection[step];
+        this.setState({selection: newSelection, steps: newSteps }); 
+    }
+    
+    unChooseProduct(step, option) {
+        let newSelection = {...this.state.selection};
+        let optionIndex = newSelection[step].indexOf(option);
+        newSelection[step].splice(optionIndex, 1);
+        let newSteps = {...this.state.steps}
+        newSteps[this.state.currentStep].selection = newSelection[step];
+        this.setState({selection: newSelection, steps: newSteps }); 
+    }
 
     getOptions() {
-        console.log("HI FROM OPTIONS");
         switch(this.state.currentStep) {
             case 1:
                 return ["person", "dog"];
             case 2:
                 return ["bath", "outdoor", "face/mouth", "body"];
             case 3:
-                return Products[this.state.selection.recipient][this.state.selection.focusArea];
+                return Products.products[this.state.selection.recipient][this.state.selection.focusArea];
+            case 4:
+                return Products.options[this.state.selection.recipient]["scents"];
+            case 5:
+                return Products.options[this.state.selection.recipient]["oils"];
+            case 6:
+                return Products.options[this.state.selection.recipient]["butters"]
+            case 7:
+                return Products.options[this.state.selection.recipient]["boosters"]
             default:
                 return [];
         }
