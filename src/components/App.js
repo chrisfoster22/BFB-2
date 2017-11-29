@@ -83,29 +83,16 @@ class App extends Component {
                     message: "Name your creation!",
                     type: "customName"
                 },
+                {
+                    message: "Ready to checkout!",
+                    type: null
+                },
 
             ]
         }
     }
 
     render() {
-        
-        if (this.state.currentStep === 8) {
-            return(
-                <div>
-                    <ChooseName onChoose={this.customizeName.bind(this)} />
-                    <button onClick={this.nextStep.bind(this)}>Next</button>
-                </div>
-            )
-        }
-
-        if (this.state.currentStep === 9) {
-            return(
-                <div>
-                    <Checkout selection={this.state.selection} />
-                </div>
-            )
-        }
 
         let currentStep = this.state.steps[this.state.currentStep];
         return (
@@ -115,14 +102,7 @@ class App extends Component {
                     <div style={styles.selectorContainer}>
                         <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
                         </header>
-                        <Selector
-                            step={currentStep}
-                            options={this.getOptions()}
-                            nextStep={this.nextStep.bind(this)}
-                            chooseProduct={this.chooseProduct.bind(this)}
-                            unChooseProduct={this.unChooseProduct.bind(this)}
-                            prevStep={this.prevStep.bind(this)}
-                            selection={this.state.selection[currentStep.type]} />
+                        {this.getSidePanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
                         {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep}>{'<  Back'}</button> }
@@ -146,7 +126,6 @@ class App extends Component {
     }
 
     chooseProduct(step, option, isArray) {
-        console.log(option);
         let newSelection = {...this.state.selection};
         if (isArray) {
             if (["none", "unscented"].indexOf(option) > -1) {
@@ -199,7 +178,29 @@ class App extends Component {
                 return [];
         }
     }
-
+    
+    getSidePanel(currentStep) {
+        switch(this.state.currentStep) {
+            case 8: 
+                return(
+                    <ChooseName onChoose={this.customizeName.bind(this)} />
+                )
+            case 9:
+                return(
+                    <Checkout selection={this.state.selection} />
+                )
+            default: 
+                return( <Selector
+                    step={currentStep}
+                    options={this.getOptions()}
+                    nextStep={this.nextStep.bind(this)}
+                    chooseProduct={this.chooseProduct.bind(this)}
+                    unChooseProduct={this.unChooseProduct.bind(this)}
+                    prevStep={this.prevStep.bind(this)}
+                    selection={this.state.selection[currentStep.type]} />
+                )
+        }
+    }
 }
 
 const styles = {

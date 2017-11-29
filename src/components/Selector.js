@@ -19,22 +19,4 @@ export default class Selector extends Component {
         )
     }
 
-    // renderProducts() {
-    //     let options = this.props.options.map((option, i) => {
-    //         return(<div
-    //             style={styles.options}
-    //             onClick={onChoose.bind(this)}
-    //             key={i}>
-    //             {option.name}
-    //             {option.options === false && <span style={{paddingLeft:"5px", fontStyle:"italic"}}>(Cannot be further customized)</span>}
-    //             </div>
-    //         )
-    //         function onChoose() {
-    //             this.props.chooseProduct(this.props.step.type, option, false);
-    //         }
-    //     })
-    //     return(
-    //         <div>{options}</div>
-    //     )
-    // }
 }
