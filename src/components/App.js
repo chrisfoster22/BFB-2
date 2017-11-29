@@ -13,6 +13,7 @@ import Products from '.././data/products';
 import ChooseName from './ChooseName';
 import Checkout from './Checkout';
 import SidePanel from './SidePanel';
+import Button from './Button';
 
 class App extends Component {
 
@@ -119,8 +120,11 @@ class App extends Component {
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
-                        {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep.bind(this)}>{'<  Back'}</button> }
-                        <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.nextStep.bind(this)}>Next</button>
+                        {currentStep.type && <Button link={true} click={this.prevStep.bind(this)} text="< Back"/>}
+                        <Button 
+                            disabled={currentStep.selection.length < 1}
+                            click={this.nextStep.bind(this)} 
+                            text="Next"/>
                     </div>
                 </main>
                 <aside>
@@ -222,26 +226,6 @@ const styles = {
     buttonContainer: {
         display: "flex",
         justifyContent: "space-between"
-    },
-    button: {
-        width: "200px",
-        height: "50px",
-        border: "1px solid #24C6DC",
-        borderRadius: "100px",
-        boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
-        cursor: "pointer"
-    },
-    buttonPrimary: {
-        color: "#FFFFFF",
-        background: "#24C6DC",
-    },
-    buttonSecondary: {
-        color: "#24C6DC",
-        background: "#FFFFFF",
-    },
-    link: {
-        border: "none",
-        cursor: "pointer"
     },
     selectorContainer: {
         width: "55%"
