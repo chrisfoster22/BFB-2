@@ -108,11 +108,13 @@ class App extends Component {
             <div className="App">
                 <main style={styles.selectorContainer}>
                     <div>
-                        <header 
-                            className="App-header" 
+                        <header
+                            className="App-header"
                             style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
-                            <div>{`Step ${this.state.currentStep} of 7`}</div>
-                            <h1>{currentStep.headerMsg}</h1>
+                            <div style={styles.headerText}>
+                                <div>{`Step ${this.state.currentStep} of 7`}</div>
+                                <h1 style={styles.headerMsg}>{currentStep.headerMsg}</h1>
+                            </div>
                         </header>
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
@@ -193,7 +195,7 @@ class App extends Component {
                 return [];
         }
     }
-    
+
     getSelectionPanel(currentStep) {
         switch(this.state.currentStep) {
             case 8:
@@ -243,6 +245,17 @@ const styles = {
     },
     selectorContainer: {
         width: "55%"
+    },
+    headerText: {
+        position: "absolute",
+        bottom: "0",
+        color: "#ffffff",
+        fontWeight: "300"
+    },
+    headerMsg: {
+        margin: "10px 0",
+        fontSize: "55px",
+        fontWeight: "300"
     }
 }
 
