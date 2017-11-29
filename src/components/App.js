@@ -3,6 +3,7 @@ import logo from '.././assets/logo.svg';
 import './App.css';
 import Selector from './Selector';
 import Products from '.././data/products';
+import ChooseName from './ChooseName';
 import Checkout from './Checkout';
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentStep: 0,
+            currentStep: 1,
             selection: {
                 recipient: "",
                 focusArea: "",
@@ -18,11 +19,12 @@ class App extends Component {
                 "scents": [],
                 "oils": [],
                 "butters": [],
-                "boosters": []
+                "boosters": [],
+                "customName": ""
             },
             steps: [
                 {
-                    message: "Get started!"
+                    message: "First"
                 },
                 {
                     message: "Who is this for?",
@@ -63,15 +65,28 @@ class App extends Component {
                     type: "boosters",
                     selection: [],
                     limit: 3
-                }
+                },
+                {
+                    message: "Name your creation!",
+                    type: "customName"
+                },
 
             ]
         }
     }
 
     render() {
-
+        
         if (this.state.currentStep === 8) {
+            return(
+                <div>
+                    <ChooseName onChoose={this.customizeName.bind(this)} />
+                    <button onClick={this.nextStep.bind(this)}>Next</button>
+                </div>
+            )
+        }
+
+        if (this.state.currentStep === 9) {
             return(
                 <div>
                     <Checkout selection={this.state.selection} />
@@ -103,6 +118,10 @@ class App extends Component {
 
     prevStep() {
         this.setState({currentStep: (this.state.currentStep - 1)})
+    }
+    
+    customizeName(name) {
+        this.setState({selection: {...this.state.selection, customName: name}})
     }
 
     chooseProduct(step, option, isArray) {

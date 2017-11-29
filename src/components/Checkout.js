@@ -16,12 +16,14 @@ export default class Checkout extends Component {
     }
 
     componentWillMount() {
+        console.log(this.props.selection);
         this.getProduct(this.props.selection);
     }
 
     render() {
         return(
           <div>
+            <div>You're all done! Here's the product you've created:</div>
             <div>{this.props.selection.product.name}</div>
             <button><a href={this.state.cartUrl}>Click here to add to Cart</a></button>
           </div>
@@ -40,7 +42,7 @@ export default class Checkout extends Component {
         })
         .catch(function (e) {
             console.log(e);
-        });
+        })
     }
 
     formatNote(selection) {
