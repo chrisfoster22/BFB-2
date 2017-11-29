@@ -20,7 +20,11 @@ export default class SidePanel extends Component {
         
         let stepDivs = this.steps.map((step, i) => {
             let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
-            if (selected.join) selected = selected.join(", ")
+            if (selected.join) {
+                selected = selected.map((choice) => {
+                    return <span style={styles.choice}>{choice}</span>
+                })
+            }
             return(
                 <div>
                     <div style={i === currentStep ? {...styles.step, ...styles.currentStep} : styles.step} key={i}>{step.text}</div>
