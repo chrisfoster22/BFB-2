@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from '../assets/logo.svg';
 
 export default class SidePanel extends Component {
 
@@ -27,22 +28,27 @@ export default class SidePanel extends Component {
             }
             return(
                 <div style={styles.stepContainer}>
-                    <div style={i === currentStep ? {...styles.step, ...styles.currentStep} : styles.step} key={i}>{step.text}</div>
+                    <div style={styles.step} key={i}>{step.text}</div>
                     <div style={styles.selected}>{selected}</div>
                 </div>
             )
         })
 
         return(
-            <div style={styles.sidePanel}>{stepDivs}</div>
+            <div style={styles.sidePanel}>
+                <img style={styles.logo} src={logo}/>
+                <div>{stepDivs}</div>
+            </div>
         )
     }
-
 }
 
 const styles = {
     sidePanel: {
-        padding: "45px"
+        padding: "10%"
+    },
+    logo: {
+        marginBottom: "45px"
     },
     stepContainer: {
         height: "75px",
@@ -52,9 +58,6 @@ const styles = {
         fontSize: "18px",
         color: "#A1A9AD",
         cursor: "default"
-    },
-    currentStep: {
-        color: "#3F4345"
     },
     selected: {
         padding: "10px 0",
