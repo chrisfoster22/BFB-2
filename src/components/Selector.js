@@ -29,8 +29,8 @@ export default class Selector extends Component {
             <div style={styles.container}>
                 <h2>{this.props.step.message}</h2>
                 <div>{options}</div>
-                <div onClick={this.props.nextStep}>Next</div>
-                {this.props.step.type && <div onClick={this.props.prevStep}>Back</div> }
+                <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
+                {this.props.step.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.props.prevStep}>{'<  Back'}</button> }
             </div>
         )
     }
@@ -46,8 +46,8 @@ export default class Selector extends Component {
             <div>
                 <h2>{this.props.step.message}</h2>
                 <div>{options}</div>
-                <div onClick={this.props.nextStep}>Next</div>
-                {this.props.step.type && <div onClick={this.props.prevStep}>Back</div> }
+                <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
+                {this.props.step.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.props.prevStep}>{'<  Back'}</button> }
             </div>
         )
     }
@@ -55,7 +55,26 @@ export default class Selector extends Component {
 
 
 const styles = {
-  container: {
-    backgroundColor: "red"
+  button: {
+    width: "200px",
+    height: "50px",
+    border: "1px solid #24C6DC",
+    borderRadius: "100px",
+    boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
+    fontSize: "20px",
+    cursor: "pointer"
+  },
+  buttonPrimary: {
+    color: "#FFFFFF",
+    background: "#24C6DC",
+  },
+  buttonSecondary: {
+    color: "#24C6DC",
+    background: "#FFFFFF",
+  },
+  link: {
+    border: "none",
+    fontSize: "20px",
+    cursor: "pointer"
   }
 }
