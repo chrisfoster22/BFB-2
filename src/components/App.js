@@ -35,24 +35,28 @@ class App extends Component {
                 },
                 {
                     message: "Select one:",
+                    headerMsg: "Choose a Recipient",
                     type: "recipient",
                     selection: "",
                     backgroundImg: recipientImg
                 },
                 {
                     message: "Select one:",
+                    headerMsg: "Choose a Focus Area",
                     type: "focusArea",
                     selection: "",
                     backgroundImg: focusAreaImg
                 },
                 {
                     message: "Select one:",
+                    headerMsg: "Choose a Product Type",
                     type: "product",
                     selection: "",
                     backgroundImg: productImg
                 },
                 {
                     message: "Select up to three:",
+                    headerMsg: "Choose Your Scents",
                     type: "scents",
                     selection: [],
                     limit: 3,
@@ -60,6 +64,7 @@ class App extends Component {
                 },
                 {
                     message: "Select up to two:",
+                    headerMsg: "Choose Your Oils",
                     type: "oils",
                     selection: [],
                     limit: 2,
@@ -67,6 +72,7 @@ class App extends Component {
                 },
                 {
                     message: "Select up to three",
+                    headerMsg: "Choose Your Butters",
                     type: "butters",
                     selection: [],
                     limit: 3,
@@ -74,13 +80,15 @@ class App extends Component {
                 },
                 {
                     message: "Select up to three",
+                    headerMsg: "Choose Your Boosters",
                     type: "boosters",
                     selection: [],
                     limit: 3,
                     backgroundImg: boostersImg
                 },
                 {
-                    message: "Name your creation!",
+                    message: null,
+                    headerMsg: "",
                     type: "customName"
                 },
                 {
@@ -100,6 +108,7 @@ class App extends Component {
                 <div style={styles.container}>
                     <div style={styles.selectorContainer}>
                         <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
+                        <h1>{currentStep.headerMsg}</h1>
                         </header>
                         {this.getSidePanel.bind(this, currentStep)()}
                     </div>
