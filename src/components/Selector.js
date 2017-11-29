@@ -24,7 +24,7 @@ export default class Selector extends Component {
 
 const styles = {
   optionsContainer: {
-      padding: "30px",
+      padding: "30px"
   },
     message: {
         marginBottom: "30px",

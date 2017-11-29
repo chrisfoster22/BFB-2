@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from '.././assets/logo.svg';
 import recipientImg from '.././assets/images/recipient.png';
 import focusAreaImg from '.././assets/images/focusArea.png';
@@ -102,17 +103,26 @@ class App extends Component {
             ]
         }
     }
+    
+    componentWillMount() {
+        this.setState({headerHeight: window.innerWidth * .55 / 2.18})
+    }
+    
+    componentDidMount() {
+        window.addEventListener("resize", this.updateDimensions.bind(this));
+    }
 
     render() {
 
         let currentStep = this.state.steps[this.state.currentStep];
         return (
             <div className="App">
-                <main style={styles.selectorContainer}>
+                <main style={styles.selectorContainer} className="selection-panel">
                     <div>
                         <header
                             className="App-header"
-                            style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
+                            style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: this.state.headerHeight}}
+                            ref={(header) => this.header = header}>
                             <div style={styles.headerText}>
                                 <div>{`Step ${this.state.currentStep} of 7`}</div>
                                 <h1 style={styles.headerMsg}>{currentStep.headerMsg}</h1>
@@ -128,7 +138,7 @@ class App extends Component {
                             text="Next"/>
                     </div>
                 </main>
-              <aside style={styles.sidePanelContainer}>
+              <aside style={styles.sidePanelContainer} className="side-panel">
                     <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
                 </aside>
             </div>
@@ -221,6 +231,14 @@ class App extends Component {
                 )
         }
     }
+    
+    updateDimensions() {
+        let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
+        let headerHeight = headerWidth / 2.18;
+        this.setState({headerHeight})
+    }
+    
+    
 }
 
 const styles = {
@@ -237,10 +255,10 @@ const styles = {
         margin: "auto"
     },
     selectorContainer: {
-        width: "55%",
         position: "relative",
         paddingBottom: 100,
-        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
+        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)",
+        maxWidth: 800
     },
     sidePanelContainer: {
         width: "45%"
