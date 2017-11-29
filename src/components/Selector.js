@@ -5,7 +5,6 @@ export default class Selector extends Component {
 
     render() {
         if (this.props.step.type === "product") {
-            console.log(this.props.options);
             return this.renderProducts();
         }
 
@@ -20,13 +19,13 @@ export default class Selector extends Component {
                     this.props.chooseProduct(this.props.step.type, option, false);
                 } else if (this.props.step.selection.indexOf(option) > -1) {
                     this.props.unChooseProduct(this.props.step.type, option);
-                } else if (this.props.step.selection.length < this.props.step.limit) {
+                } else if (["none", "unscented"].indexOf(option) > -1 || this.props.step.selection.length < this.props.step.limit) {
                     this.props.chooseProduct(this.props.step.type, option, true);
                 }
             }
         })
         return(
-            <div style={styles.container}>
+            <div>
                 <h2>{this.props.step.message}</h2>
                 <div>{options}</div>
                 <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
@@ -37,7 +36,13 @@ export default class Selector extends Component {
 
     renderProducts() {
         let options = this.props.options.map((option, i) => {
-            return <div onClick={onChoose.bind(this)} key={i}>{option.name}</div>
+            return(<div
+                onClick={onChoose.bind(this)}
+                key={i}>
+                {option.name}
+                {option.options === false && <span>(Cannot be further customized)</span>}
+                </div>
+            )
             function onChoose() {
                 this.props.chooseProduct(this.props.step.type, option, false);
             }
@@ -52,7 +57,6 @@ export default class Selector extends Component {
         )
     }
 }
-
 
 const styles = {
   button: {

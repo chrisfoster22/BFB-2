@@ -30,11 +30,13 @@ const Products = {
                 },
                 {
                     name: "mosquito repellent",
-                    productId: ""
+                    productId: "10011362062",
+                    options: false
                 },
                 {
                     name: "tick repellent",
-                    productId: "10011229454"
+                    productId: "10011229454",
+                    options: false
                 },
                 {
                     name: "perfume",
@@ -103,20 +105,24 @@ const Products = {
                     productId: "382768676897"
                 },
                 {
-                    name: "mosquito repellent",
-                    productId: ""
+                  name: "mosquito repellent",
+                  productId: "10011362062",
+                  options: false
                 },
                 {
                     name: "tick repellent",
-                    productId: "10011229454"
+                    productId: "10011229454",
+                    options: false
                 },
                 {
                     name: "flea repellent",
-                    productId: ""
+                    productId: "10011272526",
+                    options: false
                 },
                 {
                     name: "itch relief spray",
-                    productId: ""
+                    productId: "9109763726",
+                    options: false
                 },
                 {
                     name: "paw balm",
@@ -134,15 +140,18 @@ const Products = {
                 },
                 {
                     name: "detangling spray",
-                    productId: ""
+                    productId: "7452513667",
+                    options: false
                 },
                 {
                     name: "dog ear wash",
-                    productId: ""
+                    productId: "9137663374",
+                    options: false
                 },
                 {
                     name: "dog tear stain solution",
-                    productId: ""
+                    productId: "9378003406",
+                    options: false
                 },
                 {
                     name: "skin healing balm",
@@ -150,57 +159,68 @@ const Products = {
                 },
                 {
                     name: "tick repellent",
-                    productId: "10011229454"
+                    productId: "10011229454",
+                    options: false
                 },
                 {
                     name: "flea repellent",
-                    productId: ""
+                    productId: "10011272526",
+                    options: false
                 },
                 {
                     name: "dog calming spray",
-                    productId: ""
+                    productId: "8865249347",
+                    options: false
                 },
                 {
                     name: "itch relief spray",
-                    productId: ""
+                    productId: "9109763726",
+                    options: false
                 }
             ],
             "body": [
                 {
-                    name: "detangling spray",
-                    productId: ""
+                    name: "dog detangling spray",
+                    productId: "7452513667",
+                    options: false
                 },
                 {
                     name: "dog ear wash",
-                    productId: ""
+                    productId: "9137663374",
+                    options: false
                 },
                 {
                     name: "dog tear stain solution",
-                    productId: ""
+                    productId: "9378003406",
+                    options: false
                 },
                 {
                     name: "tick repellent",
-                    productId: "10011229454"
+                    productId: "10011229454",
+                    options: false
                 },
                 {
                     name: "flea repellent",
-                    productId: ""
+                    productId: "10011272526",
+                    options: false
                 },
                 {
                     name: "itch relief spray",
-                    productId: ""
+                    productId: "9109763726",
+                    options: false
                 },
                 {
                     name: "deodorant spray",
-                    productId: ""
+                    productId: "382768676897"
                 },
                 {
                     name: "mosquito repellent",
-                    productId: ""
+                    productId: "10011362062",
+                    options: false
                 },
                 {
                     name: "paw balm",
-                    productId: ""
+                    productId: "382777098273"
                 },
                 {
                     name: "skin healing balm",
