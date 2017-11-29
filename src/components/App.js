@@ -107,13 +107,16 @@ class App extends Component {
             <div className="App">
                 <div style={styles.container}>
                     <div style={styles.selectorContainer}>
-                        <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
-                        <h1>{currentStep.headerMsg}</h1>
+                        <header 
+                            className="App-header" 
+                            style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
+                            <div>{`Step ${this.state.currentStep} of 7`}</div>
+                            <h1>{currentStep.headerMsg}</h1>
                         </header>
                         {this.getSidePanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
-                        {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep}>{'<  Back'}</button> }
+                        {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep.bind(this)}>{'<  Back'}</button> }
                         <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.nextStep.bind(this)}>Next</button>
                     </div>
                 </div>
@@ -201,10 +204,8 @@ class App extends Component {
                 return( <Selector
                     step={currentStep}
                     options={this.getOptions()}
-                    nextStep={this.nextStep.bind(this)}
                     chooseProduct={this.chooseProduct.bind(this)}
                     unChooseProduct={this.unChooseProduct.bind(this)}
-                    prevStep={this.prevStep.bind(this)}
                     selection={this.state.selection[currentStep.type]} />
                 )
         }
