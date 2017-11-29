@@ -21,6 +21,7 @@ class App extends Component {
         super(props);
         this.state = {
             currentStep: 1,
+            panelHeight: 800,
             selection: {
                 recipient: "",
                 focusArea: "",
@@ -245,19 +246,12 @@ const styles = {
     buttonContainer: {
         display: "flex",
         boxSizing: "border-box",
-        justifyContent: "space-between",
-        width: "90%",
-        position: "absolute",
-        left: 0,
-        right: 0,
-        bottom: 70,
-        margin: "auto"
+        justifyContent: "space-between"
     },
     selectorContainer: {
         position: "relative",
         paddingBottom: 100,
-        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)",
-        maxWidth: 800
+        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
     },
     sidePanelContainer: {
         width: "45%"
