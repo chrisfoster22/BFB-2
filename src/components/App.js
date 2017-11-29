@@ -246,7 +246,8 @@ const styles = {
     buttonContainer: {
         display: "flex",
         boxSizing: "border-box",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        width: "90%"
     },
     selectorContainer: {
         position: "relative",
