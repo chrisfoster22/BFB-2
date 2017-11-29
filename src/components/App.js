@@ -12,7 +12,7 @@ import Selector from './Selector';
 import Products from '.././data/products';
 import ChooseName from './ChooseName';
 import Checkout from './Checkout';
-import Steps from './Steps';
+import SidePanel from './SidePanel';
 
 class App extends Component {
 
@@ -122,7 +122,7 @@ class App extends Component {
                     </div>
                 </div>
                 <div>
-                    <Steps current={this.state.currentStep}/>
+                    <SidePanel current={this.state.currentStep}/>
                 </div>
             </div>
         );

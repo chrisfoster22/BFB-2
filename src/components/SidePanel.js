@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Steps extends Component {
+export default class SidePanel extends Component {
     
     
     render() {
