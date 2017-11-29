@@ -5,7 +5,6 @@ export default class Selector extends Component {
 
     render() {
         if (this.props.step.type === "product") {
-            console.log(this.props.options);
             return this.renderProducts();
         }
 
@@ -26,11 +25,11 @@ export default class Selector extends Component {
             }
         })
         return(
-            <div style={styles.container}>
+            <div>
                 <h2>{this.props.step.message}</h2>
                 <div>{options}</div>
-                <div onClick={this.props.nextStep}>Next</div>
-                {this.props.step.type && <div onClick={this.props.prevStep}>Back</div> }
+                <button onClick={this.props.nextStep}>Next</button>
+                {this.props.step.type && <button onClick={this.props.prevStep}>Back</button> }
             </div>
         )
     }
@@ -52,16 +51,9 @@ export default class Selector extends Component {
             <div>
                 <h2>{this.props.step.message}</h2>
                 <div>{options}</div>
-                <div onClick={this.props.nextStep}>Next</div>
-                {this.props.step.type && <div onClick={this.props.prevStep}>Back</div> }
+                <button onClick={this.props.nextStep}>Next</button>
+                {this.props.step.type && <button onClick={this.props.prevStep}>Back</button> }
             </div>
         )
     }
-}
-
-
-const styles = {
-  container: {
-    backgroundColor: "red"
-  }
 }

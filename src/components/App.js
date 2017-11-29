@@ -102,7 +102,6 @@ class App extends Component {
     }
 
     prevStep() {
-        console.log(this.state.currentStep);
         this.setState({currentStep: (this.state.currentStep - 1)})
     }
 

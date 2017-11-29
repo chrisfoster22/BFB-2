@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShopifyBuy from 'shopify-buy'; 
+import ShopifyBuy from 'shopify-buy';
 
 var shopClient = ShopifyBuy.buildClient({
   accessToken: '63e6175cca54c2980bc0cfd7e731a6e7',
@@ -8,17 +8,17 @@ var shopClient = ShopifyBuy.buildClient({
 });
 
 export default class Checkout extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {cartUrl: ""}
         this.getProduct = this.getProduct.bind(this)
     }
-    
+
     componentWillMount() {
         this.getProduct(this.props.selection);
     }
-    
+
     render() {
         return(
           <div>
@@ -27,11 +27,10 @@ export default class Checkout extends Component {
           </div>
         )
     }
-    
+
     getProduct(selection) {
         shopClient.fetchProduct(selection.product.productId)
         .then((product) => {
-            console.log(product);
             var variant = product.variants[0];
             var quantity = 1;
             var checkoutURL;
@@ -40,24 +39,12 @@ export default class Checkout extends Component {
             this.setState({cartUrl})
         })
         .catch(function (e) {
-        console.log(e);
+            console.log(e);
         });
     }
-    
+
     formatNote(selection) {
       return `scents: ${selection.scents.join(', ')}%0Abutters: ${selection.butters.join(', ')}%0Aoils: ${selection.oils.join(', ')}%0Aboosters: ${selection.boosters.join(', ')}`
     }
-    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
