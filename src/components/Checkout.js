@@ -11,7 +11,7 @@ export default class Checkout extends Component {
     
     constructor(props) {
         super(props);
-        this.state = this.props.selection;
+        this.state = {cartUrl: ""}
         this.getProduct = this.getProduct.bind(this)
     }
     
@@ -21,7 +21,10 @@ export default class Checkout extends Component {
     
     render() {
         return(
-            <div>{this.state.product.name}</div>
+          <div>
+            <div>{this.props.selection.product.name}</div>
+            <button><a href={this.state.cartUrl}>Click here to add to Cart</a></button>
+          </div>
         )
     }
     
@@ -33,11 +36,8 @@ export default class Checkout extends Component {
             var quantity = 1;
             var checkoutURL;
             var note = this.formatNote(selection);
-            console.log(note);
-            
-            // checkoutURL = variant.checkoutUrl(quantity);
-            // window.open(("https://www.bestfriendbeauty.org/cart/add?id=" + variant.id));
-            window.open(("https://www.bestfriendbeauty.org/cart/add?id=" + variant.id + "&note=" + note));
+            var cartUrl = `https://www.bestfriendbeauty.org/cart/add?id=${variant.id}&note=${note}`;
+            this.setState({cartUrl})
         })
         .catch(function (e) {
         console.log(e);

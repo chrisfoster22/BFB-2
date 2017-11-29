@@ -112,6 +112,13 @@ class App extends Component {
             if (["none", "unscented"].indexOf(option) > -1) {
                 newSelection[step] = [option];
             } else {
+                var noneIndex = newSelection[step].indexOf("none");
+                var unscentedIndex = newSelection[step].indexOf("unscented");
+                if (noneIndex > -1) {
+                    newSelection[step].splice(noneIndex, 1);
+                } else if (unscentedIndex > -1) {
+                    newSelection[step].splice(unscentedIndex, 1);
+                }
                 newSelection[step].push(option);
             }
         } else {

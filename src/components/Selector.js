@@ -20,7 +20,7 @@ export default class Selector extends Component {
                     this.props.chooseProduct(this.props.step.type, option, false);
                 } else if (this.props.step.selection.indexOf(option) > -1) {
                     this.props.unChooseProduct(this.props.step.type, option);
-                } else if (this.props.step.selection.length < this.props.step.limit) {
+                } else if (["none", "unscented"].indexOf(option) > -1 || this.props.step.selection.length < this.props.step.limit) {
                     this.props.chooseProduct(this.props.step.type, option, true);
                 }
             }
@@ -37,7 +37,13 @@ export default class Selector extends Component {
 
     renderProducts() {
         let options = this.props.options.map((option, i) => {
-            return <div onClick={onChoose.bind(this)} key={i}>{option.name}</div>
+            return(<div 
+                onClick={onChoose.bind(this)} 
+                key={i}>
+                {option.name} 
+                {option.options === false && <span>(Cannot be further customized)</span>}
+                </div>
+            )
             function onChoose() {
                 this.props.chooseProduct(this.props.step.type, option, false);
             }
