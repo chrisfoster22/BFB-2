@@ -226,6 +226,8 @@ class App extends Component {
 const styles = {
     buttonContainer: {
         display: "flex",
+        boxSizing: "border-box",
+        padding: "0 30px",
         justifyContent: "space-between",
         position: "absolute",
         bottom: 80,
@@ -234,6 +236,7 @@ const styles = {
     selectorContainer: {
         width: "55%",
         position: "relative",
+        paddingBottom: 100,
         boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
     },
     sidePanelContainer: {

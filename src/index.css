@@ -1,9 +1,4 @@
-html {
-    height: 100%;
-}
-
 body {
-  height: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -17,8 +12,4 @@ button {
 
 input {
   color: #3F4345;
-}
-
-#root {
-    height: 100%;
 }

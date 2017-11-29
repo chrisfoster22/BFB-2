@@ -63,10 +63,10 @@ const styles = {
         marginBottom: "15px"
     },
     step: {
+        display: "flex",
         fontSize: "18px",
         color: "#A1A9AD",
         cursor: "default",
-        position: "relative"
     },
     selected: {
         padding: "10px 0",
@@ -82,10 +82,8 @@ const styles = {
         height: "30px",
         width: "30px",
         display: "inline-block",
+        margin: "-2px 10px 0 0",
         backgroundPosition: "center",
-        backgroundSize: "cover",
-        position: "absolute",
-        left: -36,
-        top: -4
+        backgroundSize: "cover"
     }
 }
