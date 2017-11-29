@@ -23,24 +23,27 @@ export default class SidePanel extends Component {
             if (selected.join) selected = selected.join(", ")
             return(
                 <div>
-                    <div style={ i === currentStep ? styles.currentStep : styles.step } key={i}>{step.text}</div>
+                    <div style={i === currentStep ? {...styles.step, ...styles.currentStep} : styles.step} key={i}>{step.text}</div>
                     <div>{selected}</div>
                 </div>
             ) 
         })
-        
+
         return(
             <div>{stepDivs}</div>
         )
     }
-    
-} 
+
+}
 
 const styles = {
     step: {
-        color: "grey"    
+        fontSize: "18px",
+        fontWeight: "300",
+        color: "#A1A9AD",
+        cursor: "default"
     },
     currentStep: {
-        color: "black"
+        color: "#3F4345"
     }
 }
