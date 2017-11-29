@@ -229,9 +229,12 @@ const styles = {
         boxSizing: "border-box",
         padding: "0 30px",
         justifyContent: "space-between",
+        width: "90%",
         position: "absolute",
-        bottom: 80,
-        width: "100%"
+        left: 0,
+        right: 0,
+        bottom: 70,
+        margin: "auto"
     },
     selectorContainer: {
         width: "55%",
