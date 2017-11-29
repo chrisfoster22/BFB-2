@@ -25,41 +25,41 @@ class App extends Component {
                     message: "Get started!"
                 },
                 {
-                    message: "Select One:",
+                    message: "Select one:",
                     type: "recipient",
                     selection: "",
                     backgroundImg: "https://static.pexels.com/photos/59523/pexels-photo-59523.jpeg"
                 },
                 {
-                    message: "What kind of product?",
+                    message: "Select one:",
                     type: "focusArea",
                     selection: ""
                 },
                 {
-                    message: "Which product?",
+                    message: "Select one:",
                     type: "product",
                     selection: ""
                 },
                 {
-                    message: "What would you like it to smell like?",
+                    message: "Select up to three:",
                     type: "scents",
                     selection: [],
                     limit: 3
                 },
                 {
-                    message: "What would you like the base to be?",
+                    message: "Select up to two:",
                     type: "oils",
                     selection: [],
                     limit: 2
                 },
                 {
-                    message: "Would you like to add any butters?",
+                    message: "Select up to three",
                     type: "butters",
                     selection: [],
                     limit: 3
                 },
                 {
-                    message: "How about some health boosters?",
+                    message: "Select up to three",
                     type: "boosters",
                     selection: [],
                     limit: 3
