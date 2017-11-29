@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
 export default class Option extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
             selected: false
         }
     }
-    
+
     componentWillReceiveProps(nextProps) {
         let selected = false;
         if (nextProps.option.name) {
-            console.log(nextProps.step.selection);
             if (nextProps.step.selection.name) {
                 selected = nextProps.step.selection.name.indexOf(nextProps.option.name) > -1
             }
@@ -21,16 +20,19 @@ export default class Option extends Component {
         }
         this.setState({selected})
     }
-    
+
     render() {
         let text = this.props.option.name || this.props.option;
-        let height = this.state.selected ? 11 : 0;
-        let width = this.state.selected ? 11 : 0;
-        console.log(text);
+        let height = this.state.selected ? "60%" : 0;
+        let width = this.state.selected ? "60%" : 0;
         let fontWeight = ["none", "unscented"].indexOf(text) > -1 ? "bold" : 300;
-        
+
         return(
-            <div style={{...styles.option, fontWeight: fontWeight}} onClick={this.onChoose.bind(this)}><span style={styles.optionBtn}><span style={{...styles.selectedBtn, height: height, width: width}}></span></span>{text}</div>
+            <div style={{...styles.option, fontWeight: fontWeight}} onClick={this.onChoose.bind(this)}>
+                <span style={styles.optionBtn}>
+                    <span style={{...styles.selectedBtn, height: height, width: width}}></span>
+                </span>
+            {text}</div>
         )
     }
 
@@ -60,16 +62,17 @@ const styles = {
       justifyContent: "center",
       width: 20,
       height: 20,
-      marginRight: 20,
       border: "1px solid #3F4345",
-      borderRadius: "50%"
+      borderRadius: "50%",
+      marginTop: 3,
+      marginRight: 20
   },
   selectedBtn: {
       display: "inline-block",
-      height: 0,
       width: 0,
-      transition: "all .5s",
+      height: 0,
       borderRadius: "50%",
+      transition: "all .5s",
       backgroundColor: "#3F4345"
   }
 }

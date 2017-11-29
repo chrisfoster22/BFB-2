@@ -16,7 +16,6 @@ export default class Checkout extends Component {
     }
 
     componentWillMount() {
-        console.log(this.props.selection);
         this.getProduct(this.props.selection);
     }
 
