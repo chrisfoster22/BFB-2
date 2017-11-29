@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import logo from '.././assets/logo.svg';
+import recipientImg from '.././assets/images/recipient.png';
+import focusAreaImg from '.././assets/images/focusArea.png';
+import productImg from '.././assets/images/product.png';
+import scentsImg from '.././assets/images/scents.png';
+import oilsImg from '.././assets/images/oils.png';
+import buttersImg from '.././assets/images/butters.png';
+import boostersImg from '.././assets/images/booster.png';
 import './App.css';
 import Selector from './Selector';
 import Products from '.././data/products';
@@ -30,41 +37,47 @@ class App extends Component {
                     message: "Select one:",
                     type: "recipient",
                     selection: "",
-                    backgroundImg: "https://static.pexels.com/photos/59523/pexels-photo-59523.jpeg"
+                    backgroundImg: recipientImg
                 },
                 {
                     message: "Select one:",
                     type: "focusArea",
-                    selection: ""
+                    selection: "",
+                    backgroundImg: focusAreaImg
                 },
                 {
                     message: "Select one:",
                     type: "product",
-                    selection: ""
+                    selection: "",
+                    backgroundImg: productImg
                 },
                 {
                     message: "Select up to three:",
                     type: "scents",
                     selection: [],
-                    limit: 3
+                    limit: 3,
+                    backgroundImg: scentsImg
                 },
                 {
                     message: "Select up to two:",
                     type: "oils",
                     selection: [],
-                    limit: 2
+                    limit: 2,
+                    backgroundImg: oilsImg
                 },
                 {
                     message: "Select up to three",
                     type: "butters",
                     selection: [],
-                    limit: 3
+                    limit: 3,
+                    backgroundImg: buttersImg
                 },
                 {
                     message: "Select up to three",
                     type: "boosters",
                     selection: [],
-                    limit: 3
+                    limit: 3,
+                    backgroundImg: boostersImg
                 },
                 {
                     message: "Name your creation!",
@@ -95,19 +108,22 @@ class App extends Component {
         }
 
         let currentStep = this.state.steps[this.state.currentStep];
-
         return (
             <div className="App">
-                <header className="App-header">
-                </header>
-                <Selector
-                step={currentStep}
-                options={this.getOptions()}
-                nextStep={this.nextStep.bind(this)}
-                chooseProduct={this.chooseProduct.bind(this)}
-                unChooseProduct={this.unChooseProduct.bind(this)}
-                prevStep={this.prevStep.bind(this)}
-                selection={this.state.selection[currentStep.type]} />
+                <div style={styles.selectorContainer}>
+                    <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
+                    </header>
+                    <Selector
+                    step={currentStep}
+                    options={this.getOptions()}
+                    nextStep={this.nextStep.bind(this)}
+                    chooseProduct={this.chooseProduct.bind(this)}
+                    unChooseProduct={this.unChooseProduct.bind(this)}
+                    prevStep={this.prevStep.bind(this)}
+                    selection={this.state.selection[currentStep.type]} />
+                </div>
+                <div>
+                </div>
             </div>
         );
     }
@@ -178,6 +194,12 @@ class App extends Component {
         }
     }
 
+}
+
+const styles = {
+    selectorContainer: {
+        width: "55%"
+    }
 }
 
 export default App;
