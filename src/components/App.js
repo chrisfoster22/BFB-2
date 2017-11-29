@@ -93,7 +93,8 @@ class App extends Component {
                 {
                     message: null,
                     headerMsg: "",
-                    type: "customName"
+                    type: "customName",
+                    selection: ""
                 },
                 {
                     message: "Ready to checkout!",

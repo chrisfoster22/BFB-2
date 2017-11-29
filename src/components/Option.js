@@ -5,14 +5,43 @@ export default class Option extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: this.props.step.selection.indexOf(this.props.option) > -1
+            selected: false
         }
     }
     
+    componentWillReceiveProps(nextProps) {
+        let selected = false;
+        if (nextProps.option.name) {
+            console.log(nextProps.step.selection);
+            if (nextProps.step.selection.name) {
+                selected = nextProps.step.selection.name.indexOf(nextProps.option.name) > -1
+            }
+        } else {
+            selected = nextProps.step.selection.indexOf(nextProps.option) > -1
+        }
+        this.setState({selected})
+    }
+    
     render() {
-        let text = this.props.option.name || this.props.option
+        // let selected = false;
+        // let text;
+        // if (this.props.option.name) {
+        //     console.log(this.props.step.selection);
+        //     if (this.props.step.selection.name) {
+        //         selected = this.props.step.selection.name.indexOf(this.props.option.name) > -1
+        //     }
+        //     text = this.props.option.name
+        // } else {
+        //     selected = this.props.step.selection.indexOf(this.props.option) > -1
+        //     text = this.props.option
+        // }
+        // let selected = (this.props.option.name && this.props.step.selection.name.indexOf(this.props.option) > -1) || this.props.step.selection.indexOf(this.props.option) > -1
+        let text = this.props.option.name || this.props.option;
+        let height = this.state.selected ? 11 : 0;
+        let width = this.state.selected ? 11 : 0;
+        
         return(
-            <div style={styles.option} onClick={this.onChoose.bind(this)}>{text}</div>
+            <div style={styles.option} onClick={this.onChoose.bind(this)}><span style={styles.optionBtn}><span style={{...styles.selectedBtn, height: height, width: width}}></span></span>{text}</div>
         )
     }
 
@@ -29,10 +58,29 @@ export default class Option extends Component {
 
 const styles = {
   option: {
+      display: "flex",
       margin: "15px 0",
       color: "#3F4345",
       textTransform: "capitalize",
       fontWeight: "300",
       cursor: "pointer"
+  },
+  optionBtn: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: 20,
+      height: 20,
+      marginRight: 20,
+      border: "1px solid #3F4345",
+      borderRadius: "50%"
+  },
+  selectedBtn: {
+      display: "inline-block",
+      height: 0,
+      width: 0,
+      transition: "all .5s",
+      borderRadius: "50%",
+      backgroundColor: "#3F4345"
   }
 }
