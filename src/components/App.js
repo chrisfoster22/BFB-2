@@ -110,19 +110,24 @@ class App extends Component {
         let currentStep = this.state.steps[this.state.currentStep];
         return (
             <div className="App">
-                <div style={styles.selectorContainer}>
-                    <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
-                    </header>
-                    <Selector
-                    step={currentStep}
-                    options={this.getOptions()}
-                    nextStep={this.nextStep.bind(this)}
-                    chooseProduct={this.chooseProduct.bind(this)}
-                    unChooseProduct={this.unChooseProduct.bind(this)}
-                    prevStep={this.prevStep.bind(this)}
-                    selection={this.state.selection[currentStep.type]} />
-                </div>
-                <div>
+                <div style={styles.container}>
+                    <h2 style={styles.message}>{currentStep.message}</h2>
+                    <div style={styles.selectorContainer}>
+                        <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
+                        </header>
+                        <Selector
+                            step={currentStep}
+                            options={this.getOptions()}
+                            nextStep={this.nextStep.bind(this)}
+                            chooseProduct={this.chooseProduct.bind(this)}
+                            unChooseProduct={this.unChooseProduct.bind(this)}
+                            prevStep={this.prevStep.bind(this)}
+                            selection={this.state.selection[currentStep.type]} />
+                    </div>
+                    <div style={styles.buttonContainer}>
+                        {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep}>{'<  Back'}</button> }
+                        <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.nextStep.bind(this)}>Next</button>
+                    </div>
                 </div>
             </div>
         );
@@ -141,6 +146,7 @@ class App extends Component {
     }
 
     chooseProduct(step, option, isArray) {
+        console.log(option);
         let newSelection = {...this.state.selection};
         if (isArray) {
             if (["none", "unscented"].indexOf(option) > -1) {
@@ -197,6 +203,40 @@ class App extends Component {
 }
 
 const styles = {
+    buttonContainer: {
+      display: "flex",
+      justifyContent: "space-between"
+    },
+    button: {
+      width: "200px",
+      height: "50px",
+      border: "1px solid #24C6DC",
+      borderRadius: "100px",
+      boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
+      cursor: "pointer"
+    },
+    buttonPrimary: {
+      color: "#FFFFFF",
+      background: "#24C6DC",
+    },
+    buttonSecondary: {
+      color: "#24C6DC",
+      background: "#FFFFFF",
+    },
+    link: {
+      border: "none",
+      cursor: "pointer"
+  },
+  container: {
+    padding: "30px 10%"
+  },
+  message: {
+    marginBottom: "30px",
+    color: "#3F4345",
+    fontSize: "20px",
+    fontWeight: "300",
+    fontStyle: "italic"
+    }, 
     selectorContainer: {
         width: "55%"
     }
