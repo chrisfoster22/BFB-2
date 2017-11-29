@@ -106,8 +106,8 @@ class App extends Component {
         let currentStep = this.state.steps[this.state.currentStep];
         return (
             <div className="App">
-                <div style={styles.container}>
-                    <div style={styles.selectorContainer}>
+                <main style={styles.selectorContainer}>
+                    <div>
                         <header 
                             className="App-header" 
                             style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
@@ -120,10 +120,10 @@ class App extends Component {
                         {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep.bind(this)}>{'<  Back'}</button> }
                         <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.nextStep.bind(this)}>Next</button>
                     </div>
-                </div>
-                <div>
-                    <SidePanel current={this.state.currentStep}/>
-                </div>
+                </main>
+                <aside>
+                    <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
+                </aside>
             </div>
         );
     }
@@ -240,10 +240,7 @@ const styles = {
     link: {
         border: "none",
         cursor: "pointer"
-  },
-    container: {
-        padding: "30px 10%"
-  },
+    },
     selectorContainer: {
         width: "55%"
     }

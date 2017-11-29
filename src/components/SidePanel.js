@@ -2,14 +2,30 @@ import React, { Component } from 'react';
 
 export default class SidePanel extends Component {
     
-    
+    constructor(props) {
+        super(props);
+        this.steps = [
+            {type: "recipient", text: "Recipient Type"}, 
+            {type: "focusArea", text: "Focus Area"}, 
+            {type: "product", text: "Product Type"}, 
+            {type: "scents", text: "Scents"}, 
+            {type: "oils", text: "Oils"}, 
+            {type: "butters", text: "Butters"},
+            {type: "boosters", text: "Boosters"}
+        ]
+    }
+
     render() {
-        let steps = ["Recipient Type", "Focus Area", "Product Type", "Scents", "Oils", "Butters", "Boosters"]
-        let currentStep = this.props.current - 1
+        let currentStep = this.props.current - 1;
         
-        let stepDivs = steps.map((step, i) => {
+        let stepDivs = this.steps.map((step, i) => {
+            let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
+            if (selected.join) selected = selected.join(", ")
             return(
-                <div style={ i === currentStep ? styles.currentStep : styles.step } key={i}>{step}</div>    
+                <div>
+                    <div style={ i === currentStep ? styles.currentStep : styles.step } key={i}>{step.text}</div>
+                    <div>{selected}</div>
+                </div>
             ) 
         })
         
