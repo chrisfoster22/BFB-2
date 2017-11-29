@@ -121,9 +121,9 @@ class App extends Component {
                     </div>
                     <div style={styles.buttonContainer}>
                         {currentStep.type && <Button link={true} click={this.prevStep.bind(this)} text="< Back"/>}
-                        <Button 
+                        <Button
                             disabled={currentStep.selection.length < 1}
-                            click={this.nextStep.bind(this)} 
+                            click={this.nextStep.bind(this)}
                             text="Next"/>
                     </div>
                 </main>
@@ -232,7 +232,8 @@ const styles = {
     },
     selectorContainer: {
         width: "55%",
-        position: "relative"
+        position: "relative",
+        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
     },
     sidePanelContainer: {
         width: "45%"
