@@ -322,6 +322,29 @@ const Products = {
                 "none"
             ]
         }
+    },
+    scentColors: {
+        "chamomile": "",
+        "cinnamon": "",
+        "eucalyptus": "",
+        "frankincense": "",
+        "grapefruit": "",
+        "lavender": "",
+        "lemon": "",
+        "lemongrass": "",
+        "lime": "",
+        "marjoram": "",
+        "myrrh": "",
+        "orange": "",
+        "peppermint": "",
+        "rose": "",
+        "spearmint": "",
+        "tangerine": "",
+        "vanilla": "",
+        "vetiver": "",
+        "wintergreen": "",
+        "ylang ylang": "",
+        "unscented": ""
     }
 }
 
