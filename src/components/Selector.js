@@ -9,11 +9,7 @@ export default class Selector extends Component {
         }
 
         let options = this.props.options.map((option, i) => {
-            let color = "white";
-            if (typeof this.props.selection === "object" && this.props.selection.indexOf(option) > -1) {
-                color = "green";
-            }
-            return <div style={{backgroundColor: color}} onClick={onChoose.bind(this)} key={i}>{option}</div>
+            return <div style={styles.options} onClick={onChoose.bind(this)} key={i}>{option}</div>
             function onChoose() {
                 if (!this.props.step.limit) {
                     this.props.chooseProduct(this.props.step.type, option, false);
@@ -25,11 +21,13 @@ export default class Selector extends Component {
             }
         })
         return(
-            <div>
-                <h2>{this.props.step.message}</h2>
+            <div style={styles.container}>
+                <h2 style={styles.message}>{this.props.step.message}</h2>
                 <div>{options}</div>
-                <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
-                {this.props.step.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.props.prevStep}>{'<  Back'}</button> }
+                <div style={styles.buttonContainer}>
+                    {this.props.step.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.props.prevStep}>{'<  Back'}</button> }
+                    <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
+                </div>
             </div>
         )
     }
@@ -37,10 +35,11 @@ export default class Selector extends Component {
     renderProducts() {
         let options = this.props.options.map((option, i) => {
             return(<div
+                style={styles.options}
                 onClick={onChoose.bind(this)}
                 key={i}>
                 {option.name}
-                {option.options === false && <span>(Cannot be further customized)</span>}
+                {option.options === false && <span style={{paddingLeft:"5px", fontStyle:"italic"}}>(Cannot be further customized)</span>}
                 </div>
             )
             function onChoose() {
@@ -48,24 +47,46 @@ export default class Selector extends Component {
             }
         })
         return(
-            <div>
-                <h2>{this.props.step.message}</h2>
+            <div style={styles.container}>
+                <h2 style={styles.message}>{this.props.step.message}</h2>
                 <div>{options}</div>
-                <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
-                {this.props.step.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.props.prevStep}>{'<  Back'}</button> }
+                <div style={styles.buttonContainer}>
+                    {this.props.step.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.props.prevStep}>{'<  Back'}</button> }
+                    <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.props.nextStep}>Next</button>
+                </div>
             </div>
         )
     }
 }
 
 const styles = {
+  container: {
+    padding: "30px 10%"
+  },
+  message: {
+    marginBottom: "30px",
+    color: "#3F4345",
+    fontSize: "20px",
+    fontWeight: "300",
+    fontStyle: "italic"
+  },
+  options: {
+    margin: "15px 0",
+    color: "#3F4345",
+    textTransform: "capitalize",
+    fontWeight: "300",
+    cursor: "pointer"
+  },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "space-between"
+  },
   button: {
     width: "200px",
     height: "50px",
     border: "1px solid #24C6DC",
     borderRadius: "100px",
     boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
-    fontSize: "20px",
     cursor: "pointer"
   },
   buttonPrimary: {
@@ -78,7 +99,6 @@ const styles = {
   },
   link: {
     border: "none",
-    fontSize: "20px",
     cursor: "pointer"
   }
 }
