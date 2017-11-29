@@ -34,8 +34,6 @@ export default class Checkout extends Component {
         shopClient.fetchProduct(selection.product.productId)
         .then((product) => {
             var variant = product.variants[0];
-            var quantity = 1;
-            var checkoutURL;
             var note = this.formatNote(selection);
             var cartUrl = `https://www.bestfriendbeauty.org/cart/add?id=${variant.id}&note=${note}`;
             this.setState({cartUrl})

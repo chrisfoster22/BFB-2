@@ -25,18 +25,17 @@ export default class SidePanel extends Component {
     }
 
     render() {
-        let currentStep = this.props.current - 1;
 
         let stepDivs = this.steps.map((step, i) => {
             let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
             if (selected.join) {
-                selected = selected.map((choice) => {
-                    return <span style={styles.choice}>{choice}</span>
+                selected = selected.map((choice, i) => {
+                    return <span key={i} style={styles.choice}>{choice}</span>
                 })
             }
             return(
-                <div style={styles.stepContainer}>
-                    <div style={styles.step} key={i}><span style={{...styles.icon, backgroundImage: `url(${step.icon}`}}></span>{step.text}</div>
+                <div key={i} style={styles.stepContainer}>
+                    <div style={styles.step}><span style={{...styles.icon, backgroundImage: `url(${step.icon}`}}></span>{step.text}</div>
                     <div style={styles.selected}>{selected}</div>
                 </div>
             )
@@ -44,7 +43,7 @@ export default class SidePanel extends Component {
 
         return(
             <div style={styles.sidePanel}>
-                <img style={styles.logo} src={logo}/>
+                <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
                 <div>{stepDivs}</div>
             </div>
         )
@@ -78,7 +77,8 @@ const styles = {
     },
     choice: {
         display: "inline-block",
-        minWidth: 100
+        minWidth: 100,
+        transition: "all 1s"
     },
     icon: {
         height: "30px",

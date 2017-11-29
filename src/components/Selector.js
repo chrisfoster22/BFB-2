@@ -8,6 +8,7 @@ export default class Selector extends Component {
             return(
                 <Option
                     chooseProduct={this.props.chooseProduct.bind(this)}
+                    unChooseProduct={this.props.unChooseProduct.bind(this)}
                     key={i}
                     option={option}
                     step={this.props.step} />

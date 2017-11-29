@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import logo from '.././assets/logo.svg';
 import recipientImg from '.././assets/images/recipient.png';
 import focusAreaImg from '.././assets/images/focusArea.png';
 import productImg from '.././assets/images/product.png';
