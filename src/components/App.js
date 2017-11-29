@@ -98,7 +98,6 @@ class App extends Component {
         return (
             <div className="App">
                 <div style={styles.container}>
-                    <h2 style={styles.message}>{currentStep.message}</h2>
                     <div style={styles.selectorContainer}>
                         <header className="App-header" style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, height: 371}}>
                         </header>
@@ -231,13 +230,6 @@ const styles = {
   container: {
     padding: "30px 10%"
   },
-  message: {
-    marginBottom: "30px",
-    color: "#3F4345",
-    fontSize: "20px",
-    fontWeight: "300",
-    fontStyle: "italic"
-    }, 
     selectorContainer: {
         width: "55%"
     }

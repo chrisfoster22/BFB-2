@@ -3,7 +3,6 @@ import Option from './Option';
 
 export default class Selector extends Component {
 
-
     render() {
         let options = this.props.options.map((option, i) => {
             return(
@@ -15,8 +14,21 @@ export default class Selector extends Component {
             )
         });
         return(
-            <div>{options}</div>
+            <div>
+                <h2 style={styles.message}>{this.props.step.message}</h2>
+                <div>{options}</div>
+            </div>
         )
     }
 
+}
+
+const styles = {
+    message: {
+        marginBottom: "30px",
+        color: "#3F4345",
+        fontSize: "20px",
+        fontWeight: "300",
+        fontStyle: "italic"
+    }
 }
