@@ -69,7 +69,9 @@ const styles = {
         cursor: "default",
     },
     selected: {
-        padding: "10px 0",
+        paddingTop: "10px",
+        paddingBottom: "10px",
+        paddingLeft: "40px",
         fontSize: "24px",
         fontWeight: "300",
         textTransform: "capitalize"

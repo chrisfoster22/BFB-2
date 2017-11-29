@@ -245,7 +245,6 @@ const styles = {
     buttonContainer: {
         display: "flex",
         boxSizing: "border-box",
-        padding: "0 30px",
         justifyContent: "space-between",
         width: "90%",
         position: "absolute",

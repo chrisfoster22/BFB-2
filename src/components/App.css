@@ -8,7 +8,7 @@
 .App-header {
     position: relative;
     height: 150px;
-    padding: 20px;
+    padding: 20px 20px 20px 30px;
     transition: all 1s;
     max-height: 320px;
 }
