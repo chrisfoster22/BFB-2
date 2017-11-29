@@ -25,13 +25,13 @@ export default class Selector extends Component {
 
 const styles = {
   optionsContainer: {
-      padding: "30px"
+        padding: 30
   },
     message: {
-        marginBottom: "30px",
+        marginBottom: 30,
         color: "#3F4345",
-        fontSize: "20px",
-        fontWeight: "300",
+        fontSize: 20,
+        fontWeight: 300,
         fontStyle: "italic"
     }
 }

@@ -32,7 +32,8 @@ export default class Option extends Component {
                 <span style={styles.optionBtn}>
                     <span style={{...styles.selectedBtn, height: height, width: width}}></span>
                 </span>
-            {text}</div>
+                {text}
+            </div>
         )
     }
 
@@ -53,7 +54,7 @@ const styles = {
       margin: "15px 0",
       color: "#3F4345",
       textTransform: "capitalize",
-      fontWeight: "300",
+      fontWeight: 300,
       cursor: "pointer"
   },
   optionBtn: {

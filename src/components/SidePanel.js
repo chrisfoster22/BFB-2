@@ -29,8 +29,8 @@ export default class SidePanel extends Component {
         let stepDivs = this.steps.map((step, i) => {
             let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
             if (selected.join) {
-                selected = selected.map((choice, i) => {
-                    return <span key={i} style={styles.choice}>{choice}</span>
+                selected = selected.map((multiChoice, i) => {
+                    return <span key={i} style={styles.multiChoice}>{multiChoice}</span>
                 })
             }
             return(
@@ -55,34 +55,35 @@ const styles = {
         padding: "5% 10%"
     },
     logo: {
-        marginBottom: "45px"
+        marginBottom: 45
     },
     stepContainer: {
-        height: "75px",
-        marginBottom: "15px"
+        height: 75,
+        marginBottom: 15
     },
     step: {
         display: "flex",
-        fontSize: "18px",
+        fontSize: 18,
         color: "#A1A9AD",
         cursor: "default",
     },
     selected: {
-        paddingTop: "10px",
-        paddingBottom: "10px",
-        paddingLeft: "40px",
-        fontSize: "24px",
-        fontWeight: "300",
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 40,
+        fontSize: 24,
+        fontWeight: 300,
         textTransform: "capitalize"
     },
-    choice: {
+    multiChoice: {
         display: "inline-block",
         minWidth: 100,
+        fontSize: 14,
         transition: "all 1s"
     },
     icon: {
-        height: "30px",
-        width: "30px",
+        height: 30,
+        width: 30,
         display: "inline-block",
         margin: "-2px 10px 0 0",
         backgroundPosition: "center",

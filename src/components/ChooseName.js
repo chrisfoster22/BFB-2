@@ -21,7 +21,7 @@ const styles = {
       display: "relative",
       width: "75%",
       margin: "0 auto",
-      fontWeight: "300"
+      fontWeight: 300
     },
     chooseNameLabel: {
       color: "#A1A9AD"
@@ -31,7 +31,7 @@ const styles = {
         border: "none",
         borderBottom: "1px solid #3F4345",
         margin: "10px auto",
-        fontSize: "40px",
-        fontWeight: "300"
+        fontSize: 40,
+        fontWeight: 300
     }
 }

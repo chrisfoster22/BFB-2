@@ -15,22 +15,22 @@ render() {
     } else {
         btnStyles = {...styles.button, ...styles.buttonPrimary};
     }
-    
+
     return(
         <button disabled={this.props.disabled} style={btnStyles} onClick={this.props.click}>{this.props.text}</button>
     )
-}    
-    
 }
-    
+
+}
+
 
 
 const styles = {
     button: {
-        width: "200px",
-        height: "50px",
+        width: 200,
+        height: 50,
         border: "1px solid #24C6DC",
-        borderRadius: "100px",
+        borderRadius: 100,
         boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
         cursor: "pointer",
     },
