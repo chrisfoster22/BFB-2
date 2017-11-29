@@ -25,7 +25,7 @@ class App extends Component {
                     message: "Get started!"
                 },
                 {
-                    message: "Who is this for?",
+                    message: "Select One:",
                     type: "recipient",
                     selection: "",
                     backgroundImg: "https://static.pexels.com/photos/59523/pexels-photo-59523.jpeg"

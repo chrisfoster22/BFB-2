@@ -65,7 +65,6 @@ const styles = {
     border: "1px solid #24C6DC",
     borderRadius: "100px",
     boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
-    fontSize: "20px",
     cursor: "pointer"
   },
   buttonPrimary: {
@@ -78,7 +77,6 @@ const styles = {
   },
   link: {
     border: "none",
-    fontSize: "20px",
     cursor: "pointer"
   }
 }
