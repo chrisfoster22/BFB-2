@@ -131,7 +131,7 @@ class App extends Component {
     prevStep() {
         this.setState({currentStep: (this.state.currentStep - 1)})
     }
-    
+
     customizeName(name) {
         this.setState({selection: {...this.state.selection, customName: name}})
     }
@@ -189,10 +189,10 @@ class App extends Component {
                 return [];
         }
     }
-    
+
     getSidePanel(currentStep) {
         switch(this.state.currentStep) {
-            case 8: 
+            case 8:
                 return(
                     <ChooseName onChoose={this.customizeName.bind(this)} />
                 )
@@ -200,7 +200,7 @@ class App extends Component {
                 return(
                     <Checkout selection={this.state.selection} />
                 )
-            default: 
+            default:
                 return( <Selector
                     step={currentStep}
                     options={this.getOptions()}
@@ -214,31 +214,31 @@ class App extends Component {
 
 const styles = {
     buttonContainer: {
-      display: "flex",
-      justifyContent: "space-between"
+        display: "flex",
+        justifyContent: "space-between"
     },
     button: {
-      width: "200px",
-      height: "50px",
-      border: "1px solid #24C6DC",
-      borderRadius: "100px",
-      boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
-      cursor: "pointer"
+        width: "200px",
+        height: "50px",
+        border: "1px solid #24C6DC",
+        borderRadius: "100px",
+        boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
+        cursor: "pointer"
     },
     buttonPrimary: {
-      color: "#FFFFFF",
-      background: "#24C6DC",
+        color: "#FFFFFF",
+        background: "#24C6DC",
     },
     buttonSecondary: {
-      color: "#24C6DC",
-      background: "#FFFFFF",
+        color: "#24C6DC",
+        background: "#FFFFFF",
     },
     link: {
-      border: "none",
-      cursor: "pointer"
+        border: "none",
+        cursor: "pointer"
   },
-  container: {
-    padding: "30px 10%"
+    container: {
+        padding: "30px 10%"
   },
     selectorContainer: {
         width: "55%"

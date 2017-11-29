@@ -15,7 +15,7 @@ export default class Option extends Component {
             <div style={styles.option} onClick={this.onChoose.bind(this)}>{text}</div>
         )
     }
-    
+
     onChoose() {
         if (!this.props.step.limit) {
             this.props.chooseProduct(this.props.step.type, this.props.option, false);
@@ -29,10 +29,10 @@ export default class Option extends Component {
 
 const styles = {
   option: {
-    margin: "15px 0",
-    color: "#3F4345",
-    textTransform: "capitalize",
-    fontWeight: "300",
-    cursor: "pointer"
+      margin: "15px 0",
+      color: "#3F4345",
+      textTransform: "capitalize",
+      fontWeight: "300",
+      cursor: "pointer"
   }
 }
