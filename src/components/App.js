@@ -12,6 +12,7 @@ import Selector from './Selector';
 import Products from '.././data/products';
 import ChooseName from './ChooseName';
 import Checkout from './Checkout';
+import Steps from './Steps';
 
 class App extends Component {
 
@@ -113,12 +114,15 @@ class App extends Component {
                             <div>{`Step ${this.state.currentStep} of 7`}</div>
                             <h1>{currentStep.headerMsg}</h1>
                         </header>
-                        {this.getSidePanel.bind(this, currentStep)()}
+                        {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
                         {currentStep.type && <button style={{...styles.link, ...styles.buttonSecondary}} onClick={this.prevStep.bind(this)}>{'<  Back'}</button> }
                         <button style={{...styles.button, ...styles.buttonPrimary}} onClick={this.nextStep.bind(this)}>Next</button>
                     </div>
+                </div>
+                <div>
+                    <Steps current={this.state.currentStep}/>
                 </div>
             </div>
         );
@@ -189,8 +193,8 @@ class App extends Component {
                 return [];
         }
     }
-
-    getSidePanel(currentStep) {
+    
+    getSelectionPanel(currentStep) {
         switch(this.state.currentStep) {
             case 8:
                 return(
