@@ -128,7 +128,7 @@ class App extends Component {
                             text="Next"/>
                     </div>
                 </main>
-                <aside>
+              <aside style={styles.sidePanelContainer}>
                     <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
                 </aside>
             </div>
@@ -235,6 +235,9 @@ const styles = {
         width: "55%",
         position: "relative"
     },
+    sidePanelContainer: {
+        width: "45%"
+    },
     headerText: {
         position: "absolute",
         bottom: "0",
@@ -242,7 +245,7 @@ const styles = {
         fontWeight: "300"
     },
     headerMsg: {
-        margin: "10px 0",
+        margin: "5px 0px 15px",
         fontSize: "55px",
         fontWeight: "300"
     }
