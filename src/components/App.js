@@ -103,11 +103,11 @@ class App extends Component {
             ]
         }
     }
-    
+
     componentWillMount() {
         this.setState({headerHeight: window.innerWidth * .55 / 2.18})
     }
-    
+
     componentDidMount() {
         window.addEventListener("resize", this.updateDimensions.bind(this));
     }
@@ -231,14 +231,14 @@ class App extends Component {
                 )
         }
     }
-    
+
     updateDimensions() {
         let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
         let headerHeight = headerWidth / 2.18;
         this.setState({headerHeight})
     }
-    
-    
+
+
 }
 
 const styles = {
@@ -264,14 +264,14 @@ const styles = {
     },
     headerText: {
         position: "absolute",
-        bottom: "0",
+        bottom: 0,
         color: "#ffffff",
-        fontWeight: "300"
+        fontWeight: 300
     },
     headerMsg: {
         margin: "5px 0px 15px",
-        fontSize: "55px",
-        fontWeight: "300"
+        fontSize: 55,
+        fontWeight: 300
     }
 }
 
