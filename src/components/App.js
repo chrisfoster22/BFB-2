@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '.././assets/logo.svg';
 import './App.css';
 import Selector from './Selector';
-import Products from './products';
+import Products from '.././data/products';
 import Checkout from './Checkout';
 
 class App extends Component {
@@ -22,12 +22,13 @@ class App extends Component {
             },
             steps: [
                 {
-                  message: "Get started!"
+                    message: "Get started!"
                 },
                 {
                     message: "Who is this for?",
                     type: "recipient",
-                    selection: ""
+                    selection: "",
+                    backgroundImg: "https://static.pexels.com/photos/59523/pexels-photo-59523.jpeg"
                 },
                 {
                     message: "What kind of product?",
@@ -69,7 +70,7 @@ class App extends Component {
     }
 
     render() {
-      
+
         if (this.state.currentStep === 8) {
             return(
                 <div>
@@ -77,9 +78,9 @@ class App extends Component {
                 </div>
             )
         }
-        
+
         let currentStep = this.state.steps[this.state.currentStep];
-      
+
         return (
             <div className="App">
                 <header className="App-header">
@@ -99,12 +100,12 @@ class App extends Component {
     nextStep() {
         this.setState({currentStep: (this.state.currentStep + 1)})
     }
-    
+
     prevStep() {
         console.log(this.state.currentStep);
         this.setState({currentStep: (this.state.currentStep - 1)})
     }
-    
+
     chooseProduct(step, option, isArray) {
         let newSelection = {...this.state.selection};
         if (isArray) {
@@ -114,21 +115,21 @@ class App extends Component {
                 newSelection[step].push(option);
             }
         } else {
-            newSelection[step] = option;  
+            newSelection[step] = option;
         }
-        
+
         let newSteps = {...this.state.steps}
         newSteps[this.state.currentStep].selection = newSelection[step];
-        this.setState({selection: newSelection, steps: newSteps }); 
+        this.setState({selection: newSelection, steps: newSteps });
     }
-    
+
     unChooseProduct(step, option) {
         let newSelection = {...this.state.selection};
         let optionIndex = newSelection[step].indexOf(option);
         newSelection[step].splice(optionIndex, 1);
         let newSteps = {...this.state.steps}
         newSteps[this.state.currentStep].selection = newSelection[step];
-        this.setState({selection: newSelection, steps: newSteps }); 
+        this.setState({selection: newSelection, steps: newSteps });
     }
 
     getOptions() {
