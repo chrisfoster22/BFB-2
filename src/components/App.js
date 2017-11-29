@@ -197,7 +197,7 @@ class App extends Component {
             case 2:
                 return ["bath", "outdoor", "face/mouth", "body"];
             case 3:
-                return Products.products[this.state.selection.recipient][this.state.selection.focusArea];
+                return Products.products[this.state.selection.recipient][this.state.selection.focusArea].filter((x) => {return x.options !== false});
             case 4:
                 return Products.options[this.state.selection.recipient]["scents"];
             case 5:

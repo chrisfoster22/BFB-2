@@ -52,7 +52,7 @@ export default class SidePanel extends Component {
 
 const styles = {
     sidePanel: {
-        padding: "10%"
+        padding: "5% 10%"
     },
     logo: {
         marginBottom: "45px"

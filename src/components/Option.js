@@ -23,25 +23,14 @@ export default class Option extends Component {
     }
     
     render() {
-        // let selected = false;
-        // let text;
-        // if (this.props.option.name) {
-        //     console.log(this.props.step.selection);
-        //     if (this.props.step.selection.name) {
-        //         selected = this.props.step.selection.name.indexOf(this.props.option.name) > -1
-        //     }
-        //     text = this.props.option.name
-        // } else {
-        //     selected = this.props.step.selection.indexOf(this.props.option) > -1
-        //     text = this.props.option
-        // }
-        // let selected = (this.props.option.name && this.props.step.selection.name.indexOf(this.props.option) > -1) || this.props.step.selection.indexOf(this.props.option) > -1
         let text = this.props.option.name || this.props.option;
         let height = this.state.selected ? 11 : 0;
         let width = this.state.selected ? 11 : 0;
+        console.log(text);
+        let fontWeight = ["none", "unscented"].indexOf(text) > -1 ? "bold" : 300;
         
         return(
-            <div style={styles.option} onClick={this.onChoose.bind(this)}><span style={styles.optionBtn}><span style={{...styles.selectedBtn, height: height, width: width}}></span></span>{text}</div>
+            <div style={{...styles.option, fontWeight: fontWeight}} onClick={this.onChoose.bind(this)}><span style={styles.optionBtn}><span style={{...styles.selectedBtn, height: height, width: width}}></span></span>{text}</div>
         )
     }
 
