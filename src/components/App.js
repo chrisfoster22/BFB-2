@@ -33,7 +33,8 @@ class App extends Component {
             },
             steps: [
                 {
-                    message: "First"
+                    message: "First",
+                    type: "recipient"
                 },
                 {
                     message: "Select one:",
@@ -120,7 +121,7 @@ class App extends Component {
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
-                        {currentStep.type && <Button link={true} click={this.prevStep.bind(this)} text="< Back"/>}
+                        <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
                         <Button 
                             disabled={currentStep.selection.length < 1}
                             click={this.nextStep.bind(this)} 
