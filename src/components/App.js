@@ -225,10 +225,14 @@ class App extends Component {
 const styles = {
     buttonContainer: {
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        position: "absolute",
+        bottom: 80,
+        width: "100%"
     },
     selectorContainer: {
-        width: "55%"
+        width: "55%",
+        position: "relative"
     },
     headerText: {
         position: "absolute",
