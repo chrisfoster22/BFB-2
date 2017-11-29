@@ -6,9 +6,12 @@ render() {
     let btnStyles;
     if (this.props.link) {
         btnStyles = {...styles.link, ...styles.buttonSecondary};
+        if (this.props.hidden) {
+            btnStyles = {btnStyles, visibility: "hidden"}
+        }
     }
     else if (this.props.disabled) {
-        btnStyles = {...styles.button, ...styles.buttonSecondary};
+        btnStyles = {...styles.button, ...styles.buttonSecondary, cursor: "not-allowed"};
     } else {
         btnStyles = {...styles.button, ...styles.buttonPrimary};
     }

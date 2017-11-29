@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import logo from '../assets/logo.svg';
 
+import recipientIcon from '../assets/icons/recipient.png';
+import focusAreaIcon from '../assets/icons/focusArea.png';
+import productIcon from '../assets/icons/product.png';
+import scentsIcon from '../assets/icons/scents.png';
+import oilsIcon from '../assets/icons/oils.png';
+import buttersIcon from '../assets/icons/butters.png';
+import boostersIcon from '../assets/icons/boosters.png';
+
 export default class SidePanel extends Component {
 
     constructor(props) {
         super(props);
         this.steps = [
-            {type: "recipient", text: "Recipient Type"},
-            {type: "focusArea", text: "Focus Area"},
-            {type: "product", text: "Product Type"},
-            {type: "scents", text: "Scents"},
-            {type: "oils", text: "Oils"},
-            {type: "butters", text: "Butters"},
-            {type: "boosters", text: "Boosters"}
+            {type: "recipient", text: "Recipient Type", icon: recipientIcon},
+            {type: "focusArea", text: "Focus Area", icon: focusAreaIcon},
+            {type: "product", text: "Product Type", icon: productIcon},
+            {type: "scents", text: "Scents", icon: scentsIcon},
+            {type: "oils", text: "Oils", icon: oilsIcon},
+            {type: "butters", text: "Butters", icon: buttersIcon},
+            {type: "boosters", text: "Boosters", icon: boostersIcon}
         ]
     }
 
@@ -28,7 +36,7 @@ export default class SidePanel extends Component {
             }
             return(
                 <div style={styles.stepContainer}>
-                    <div style={styles.step} key={i}>{step.text}</div>
+                    <div style={styles.step} key={i}><span style={{...styles.icon, backgroundImage: `url(${step.icon}`}}></span>{step.text}</div>
                     <div style={styles.selected}>{selected}</div>
                 </div>
             )
@@ -57,7 +65,8 @@ const styles = {
     step: {
         fontSize: "18px",
         color: "#A1A9AD",
-        cursor: "default"
+        cursor: "default",
+        position: "relative"
     },
     selected: {
         padding: "10px 0",
@@ -68,5 +77,15 @@ const styles = {
     choice: {
         display: "inline-block",
         minWidth: 100
+    },
+    icon: {
+        height: "30px",
+        width: "30px",
+        display: "inline-block",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        position: "absolute",
+        left: -36,
+        top: -4
     }
 }
