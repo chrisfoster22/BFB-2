@@ -106,7 +106,9 @@ class App extends Component {
     }
 
     componentWillMount() {
-        this.setState({headerHeight: window.innerWidth * .55 / 2.18})
+        let headerHeight = window.innerWidth * .55 / 2.4
+        let selectorHeight = 500 - headerHeight;
+        this.setState({headerHeight, selectorHeight})
     }
 
     componentDidMount() {
@@ -225,6 +227,7 @@ class App extends Component {
             default:
                 return( <Selector
                     step={currentStep}
+                    height={this.state.selectorHeight}
                     options={this.getOptions()}
                     chooseProduct={this.chooseProduct.bind(this)}
                     unChooseProduct={this.unChooseProduct.bind(this)}
@@ -235,8 +238,9 @@ class App extends Component {
 
     updateDimensions() {
         let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
-        let headerHeight = headerWidth / 2.18;
-        this.setState({headerHeight})
+        let headerHeight = headerWidth / 2.4;
+        let selectorHeight = 500 - headerHeight;
+        this.setState({headerHeight, selectorHeight})
     }
 
 
@@ -245,9 +249,10 @@ class App extends Component {
 const styles = {
     buttonContainer: {
         display: "flex",
-        boxSizing: "border-box",
         justifyContent: "space-between",
-        width: "90%"
+        width: "90%",
+        margin: "0 auto",
+        boxSizing: "border-box"
     },
     selectorContainer: {
         position: "relative",

@@ -51,7 +51,7 @@ export default class Option extends Component {
 const styles = {
   option: {
       display: "flex",
-      margin: "15px 0",
+      margin: "10px 0",
       color: "#3F4345",
       textTransform: "capitalize",
       fontWeight: 300,
@@ -61,11 +61,10 @@ const styles = {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      width: 20,
-      height: 20,
+      width: 16,
+      height: 16,
       border: "1px solid #3F4345",
       borderRadius: "50%",
-      marginTop: 3,
       marginRight: 20
   },
   selectedBtn: {
