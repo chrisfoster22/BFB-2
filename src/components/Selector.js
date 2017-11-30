@@ -32,7 +32,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    height: 300
+    height: 300,
+    minHeight: 200
   },
     message: {
         marginBottom: 30,
