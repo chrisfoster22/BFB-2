@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import logo from '../assets/logo.svg';
 import recipientImg from '.././assets/images/recipient.png';
 import focusAreaImg from '.././assets/images/focusArea.png';
 import productImg from '.././assets/images/product.png';
@@ -123,6 +124,9 @@ class App extends Component {
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
                     <div>
+                        <div className="App-mobile-logo" style={styles.logoContainer} >
+                            <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
+                        </div>
                         <header className="App-header" style={{height: this.state.headerHeight}}>
                             <div className="App-header-image"
                             style={{
@@ -132,7 +136,7 @@ class App extends Component {
                             ref={(header) => this.header = header}>
                             <div style={styles.headerText}>
                                 <div>{`Step ${this.state.currentStep} of 7`}</div>
-                                <h1 style={styles.headerMsg}>{currentStep.headerMsg}</h1>
+                                <h1 className="App-header-text" style={styles.headerMsg}>{currentStep.headerMsg}</h1>
                             </div>
                             </div>
                         </header>
@@ -256,20 +260,12 @@ class App extends Component {
 }
 
 const styles = {
-    buttonContainer: {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "90%",
-        margin: "0 auto",
-        boxSizing: "border-box"
+    logoContainer: {
+        padding: 10
     },
-    selectorContainer: {
-        position: "relative",
-        paddingBottom: 100,
-        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
-    },
-    sidePanelContainer: {
-        width: "45%"
+    logo: {
+        display: "block",
+        margin: "0 auto"
     },
     headerText: {
         position: "absolute",
@@ -280,8 +276,22 @@ const styles = {
     },
     headerMsg: {
         margin: "5px 0px 15px",
-        fontSize: 55,
         fontWeight: 300
+    },
+    selectorContainer: {
+        position: "relative",
+        paddingBottom: 100,
+        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
+    },
+    sidePanelContainer: {
+        width: "45%"
+    },
+    buttonContainer: {
+        display: "flex",
+        justifyContent: "space-between",
+        width: "90%",
+        margin: "0 auto",
+        boxSizing: "border-box"
     }
 }
 

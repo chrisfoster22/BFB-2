@@ -6,6 +6,10 @@
     font-size: 16px;
 }
 
+.App-mobile-logo {
+    display: none;
+}
+
 .App-header {
     position: relative;
     height: 325px;
@@ -33,12 +37,24 @@
     box-sizing: border-box;
 }
 
+.App-header-text {
+    font-size: 50px;
+}
+
 .selection-panel {
     width: 55%;
     flex: 1;
 }
 
 @media all and (max-width: 768px) {
+    .App-mobile-logo {
+        display: block;
+    }
+
+    .App-header-text {
+        font-size: 30px;
+    }
+
     .selection-panel {
         width: 100%;
     }
