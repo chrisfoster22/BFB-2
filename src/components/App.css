@@ -49,6 +49,7 @@
 @media all and (max-width: 768px) {
     .App-mobile-logo {
         display: block;
+        box-shadow: 0 7px 10px 0 rgba(0,0,0,0.06);
     }
 
     .App-header-text {
