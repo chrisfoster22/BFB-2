@@ -6,13 +6,18 @@ export default class Selector extends Component {
     render() {
         let fontSize = this.props.options.length > 10 ? 16 : 20
         let options = this.props.options.map((option, i) => {
+            console.log(option);
+            console.log(option, this.props.selection);
+            let selected = this.props.selection.indexOf ? this.props.selection.indexOf(option) > -1 : this.props.selection.name.indexOf(option.name) > -1;
             return(
                 <Option
                     chooseProduct={this.props.chooseProduct.bind(this)}
                     unChooseProduct={this.props.unChooseProduct.bind(this)}
+                    fontSize={fontSize}
                     key={i}
                     option={option}
-                    step={this.props.step} />
+                    step={this.props.step}
+                    selected={selected} />
             )
         });
         return(
