@@ -21,6 +21,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            windowWidth: 0,
             currentStep: 1,
             panelHeight: 800,
             cartUrl: null,
@@ -100,6 +101,7 @@ class App extends Component {
                 },
                 {
                     message: "Ready to checkout!",
+                    selection: "done",
                     type: null
                 },
 
@@ -108,9 +110,10 @@ class App extends Component {
     }
 
     componentWillMount() {
-        let headerHeight = window.innerWidth * .55 / 2.4
+        let windowWidth = window.innerWidth;
+        let headerHeight = windowWidth * .55 / 2.4
         let selectorHeight = 500 - headerHeight;
-        this.setState({headerHeight, selectorHeight})
+        this.setState({headerHeight, selectorHeight, windowWidth})
     }
 
     componentDidMount() {
@@ -118,8 +121,25 @@ class App extends Component {
     }
 
     render() {
+      
+        if (this.state.currentStep === 9) {
+          return(
+              <div>
+                  <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
+                  <div style={styles.buttonContainer}>
+                      <Button link={true} hidden={false} click={this.prevStep.bind(this)} text="< Back"/>
+                      <Button
+                          cartUrl={this.state.cartUrl}
+                          disabled={disabled}
+                          click={this.nextStep.bind(this)}
+                          text= "Add to Cart"/>
+                  </div>
+              </div>
+          )
+        }
         let currentStep = this.state.steps[this.state.currentStep];
         let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
+        let mobile = this.state.windowWidth < 768;
         return (
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
@@ -146,10 +166,10 @@ class App extends Component {
                     <div style={styles.buttonContainer}>
                         <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
                         <Button
-                            cartUrl={this.state.cartUrl}
+                            cartUrl={this.state.currentStep === 8 && !mobile || this.state.currentStep === 9 ? this.state.cartUrl : null}
                             disabled={disabled}
                             click={this.nextStep.bind(this)}
-                            text={this.state.currentStep === 8 ? "Add to Cart" : "Next"}/>
+                            text={this.state.currentStep === 8 && !mobile || this.state.currentStep === 9 ? "Add to Cart" : "Next"}/>
                     </div>
                 </main>
               <aside style={styles.sidePanelContainer} className="side-panel">
@@ -252,10 +272,11 @@ class App extends Component {
     }
 
     updateDimensions() {
+        let windowWidth = window.innerWidth;
         let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
         let headerHeight = headerWidth / 2.4;
         let selectorHeight = 500 - headerHeight;
-        this.setState({headerHeight, selectorHeight})
+        this.setState({headerHeight, selectorHeight, windowWidth})
     }
 }
 
