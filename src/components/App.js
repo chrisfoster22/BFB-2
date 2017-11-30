@@ -22,6 +22,7 @@ class App extends Component {
         this.state = {
             currentStep: 1,
             panelHeight: 800,
+            cartUrl: null,
             selection: {
                 recipient: "",
                 focusArea: "",
@@ -136,9 +137,10 @@ class App extends Component {
                     <div style={styles.buttonContainer}>
                         <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
                         <Button
+                            cartUrl={this.state.cartUrl}
                             disabled={disabled}
                             click={this.nextStep.bind(this)}
-                            text="Next"/>
+                            text={this.state.currentStep === 8 ? "Add to Cart" : "Next"}/>
                     </div>
                 </main>
               <aside style={styles.sidePanelContainer} className="side-panel">
@@ -156,8 +158,8 @@ class App extends Component {
         this.setState({currentStep: (this.state.currentStep - 1)})
     }
 
-    customizeName(name) {
-        this.setState({selection: {...this.state.selection, customName: name}})
+    customizeName(name, cartUrl) {
+        this.setState({selection: {...this.state.selection, customName: name}, cartUrl: cartUrl})
     }
 
     chooseProduct(step, option, isArray) {
@@ -218,7 +220,7 @@ class App extends Component {
         switch(this.state.currentStep) {
             case 8:
                 return(
-                    <ChooseName onChoose={this.customizeName.bind(this)} />
+                    <ChooseName selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
                 )
             case 9:
                 return(

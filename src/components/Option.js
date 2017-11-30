@@ -2,25 +2,6 @@ import React, { Component } from 'react';
 
 export default class Option extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         selected: false
-    //     }
-    // }
-
-    // componentWillReceiveProps(nextProps) {
-    //     let selected = false;
-    //     if (nextProps.option.name) {
-    //         if (nextProps.step.selection.name) {
-    //             selected = nextProps.step.selection.name.indexOf(nextProps.option.name) > -1
-    //         }
-    //     } else {
-    //         selected = nextProps.step.selection.indexOf(nextProps.option) > -1
-    //     }
-    //     this.setState({...nextProps, selected})
-    // }
-
     render() {
         let text = this.props.option.name || this.props.option;
         let height = this.props.selected ? "60%" : 0;
@@ -66,14 +47,12 @@ const styles = {
       width: 16,
       height: 16,
       border: "1px solid #3F4345",
-      // borderRadius: "50%",
       marginRight: 15
   },
   selectedBtn: {
       display: "inline-block",
       width: 0,
       height: 0,
-      // borderRadius: "50%",
       transition: "all .5s",
       backgroundColor: "#3F4345"
   }

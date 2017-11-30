@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 export default class Button extends Component {
 
 render() {
+    
     let btnStyles;
     if (this.props.link) {
         btnStyles = {...styles.link, ...styles.buttonSecondary};
@@ -14,6 +15,12 @@ render() {
         btnStyles = {...styles.button, ...styles.buttonSecondary, cursor: "not-allowed"};
     } else {
         btnStyles = {...styles.button, ...styles.buttonPrimary};
+    }
+    
+    if (this.props.cartUrl) {
+        return(
+            <a href={this.props.cartUrl}><button disabled={this.props.disabled} style={btnStyles}>Add to Cart</button></a>
+        )
     }
 
     return(
