@@ -161,7 +161,11 @@ class App extends Component {
     }
 
     prevStep() {
-        this.setState({currentStep: (this.state.currentStep - 1)})
+        if (this.state.currentStep === 4) {
+            this.setState({currentStep: 3, selection: {...this.state.selection, "scents": [], "oils": [], "butters": [], "boosters": [], "customName": "" }})
+        } else {
+            this.setState({currentStep: (this.state.currentStep - 1)})
+        }
     }
 
     customizeName(name, cartUrl) {
