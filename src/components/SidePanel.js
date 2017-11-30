@@ -82,7 +82,7 @@ const styles = {
     selected: {
         paddingTop: 10,
         paddingBottom: 10,
-        paddingLeft: 40,
+        paddingLeft: 30,
         fontSize: 20,
         fontWeight: 300,
         textTransform: "capitalize",
