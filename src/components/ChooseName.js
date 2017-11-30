@@ -20,7 +20,7 @@ const styles = {
     chooseNameContainer: {
         display: "relative",
         width: "75%",
-        margin: "0 auto",
+        margin: "0 auto 30px",
         fontWeight: 300
     },
     chooseNameLabel: {

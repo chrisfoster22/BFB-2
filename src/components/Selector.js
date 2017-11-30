@@ -4,6 +4,7 @@ import Option from './Option';
 export default class Selector extends Component {
 
     render() {
+        let fontSize = this.props.options.length > 10 ? 16 : 20
         let options = this.props.options.map((option, i) => {
             return(
                 <Option
@@ -17,7 +18,7 @@ export default class Selector extends Component {
         return(
             <div style={styles.optionsContainer}>
                 <h2 style={styles.message}>{this.props.step.message}</h2>
-                <div style={{...styles.options, height: this.props.height}}>{options}</div>
+                <div style={{...styles.options, height: this.props.height, fontSize: fontSize}}>{options}</div>
             </div>
         )
     }
