@@ -119,20 +119,25 @@ class App extends Component {
     render() {
         let currentStep = this.state.steps[this.state.currentStep];
         let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
+        let gradient = this.state.currentStep === 8 ? "none" : `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.00) 65%)`
         return (
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
                     <div>
-                        {this.state.currentStep < 8 &&<header
-                            className="App-header"
-                            style={{backgroundSize: "100% 100%", backgroundImage: `url(${currentStep.backgroundImg})`, backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.00) 65%), url(${currentStep.backgroundImg})`, height: this.state.headerHeight}}
+                        <header style={{backgroundImage: gradient}}>
+                            <div className="App-header"
+                            style={{
+                                backgroundSize: "100% 100%",
+                                 backgroundImage: `url(${currentStep.backgroundImg})`,
+                                 height: this.state.headerHeight}}
                             ref={(header) => this.header = header}>
                             <div style={styles.headerText}>
                                 <div>{`Step ${this.state.currentStep} of 7`}</div>
                                 <h1 style={styles.headerMsg}>{currentStep.headerMsg}</h1>
                             </div>
+                            </div>
                         </header>
-                    }
+                    
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
