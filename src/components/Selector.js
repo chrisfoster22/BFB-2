@@ -31,21 +31,21 @@ export default class Selector extends Component {
 
 const styles = {
   optionsContainer: {
-        padding: 30,
-        maxWidth: 720
+      padding: 30,
+      maxWidth: 720
   },
   options: {
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    height: 300,
-    minHeight: 200
+      display: "flex",
+      flexDirection: "column",
+      flexWrap: "wrap",
+      height: 300,
+      minHeight: 200
   },
-    message: {
-        marginBottom: 30,
-        color: "#3F4345",
-        fontSize: 20,
-        fontWeight: 300,
-        fontStyle: "italic"
-    }
+  message: {
+      marginBottom: 30,
+      color: "#3F4345",
+      fontSize: 20,
+      fontWeight: 300,
+      fontStyle: "italic"
+  }
 }

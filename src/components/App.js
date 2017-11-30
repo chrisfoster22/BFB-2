@@ -257,7 +257,7 @@ const styles = {
     selectorContainer: {
         position: "relative",
         paddingBottom: 100,
-        boxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)"
+        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
     },
     sidePanelContainer: {
         width: "45%"

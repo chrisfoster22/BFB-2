@@ -32,7 +32,7 @@ const styles = {
         border: "1px solid #24C6DC",
         borderRadius: 100,
         boxShadow: "0 6px 10px 0 rgba(0,0,0,0.18)",
-        cursor: "pointer",
+        cursor: "pointer"
     },
     buttonPrimary: {
         color: "#FFFFFF",
@@ -41,7 +41,7 @@ const styles = {
     },
     buttonSecondary: {
         color: "#24C6DC",
-        background: "#FFFFFF",
+        background: "#FFFFFF"
     },
     link: {
         border: "none",

@@ -73,7 +73,7 @@ const styles = {
         display: "flex",
         fontSize: 18,
         color: "#A1A9AD",
-        cursor: "default",
+        cursor: "default"
     },
     selected: {
         paddingTop: 10,
