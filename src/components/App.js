@@ -121,7 +121,10 @@ class App extends Component {
     }
 
     render() {
-      
+        let currentStep = this.state.steps[this.state.currentStep];
+        let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
+        let mobile = this.state.windowWidth < 768;
+
         if (this.state.currentStep === 9) {
           return(
               <div>
@@ -137,9 +140,7 @@ class App extends Component {
               </div>
           )
         }
-        let currentStep = this.state.steps[this.state.currentStep];
-        let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
-        let mobile = this.state.windowWidth < 768;
+
         return (
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
@@ -166,10 +167,10 @@ class App extends Component {
                     <div style={styles.buttonContainer}>
                         <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
                         <Button
-                            cartUrl={this.state.currentStep === 8 && !mobile || this.state.currentStep === 9 ? this.state.cartUrl : null}
+                            cartUrl={(this.state.currentStep === 8 && !mobile) || (this.state.currentStep === 9) ? this.state.cartUrl : null}
                             disabled={disabled}
                             click={this.nextStep.bind(this)}
-                            text={this.state.currentStep === 8 && !mobile || this.state.currentStep === 9 ? "Add to Cart" : "Next"}/>
+                            text={(this.state.currentStep === 8 && !mobile) || (this.state.currentStep === 9) ? "Add to Cart" : "Next"}/>
                     </div>
                 </main>
               <aside style={styles.sidePanelContainer} className="side-panel">
@@ -303,9 +304,10 @@ const styles = {
         position: "relative",
         height: "100%",
         paddingBottom: 100,
-        MozBoxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)",
-        WebkitBoxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)",
-        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
+        MozBoxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
+        WebkitBoxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
+        boxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
+        boxSizing: "border-box"
     },
     sidePanelContainer: {
         width: "45%"
@@ -314,7 +316,11 @@ const styles = {
         display: "flex",
         justifyContent: "space-between",
         width: "90%",
-        margin: "0 auto",
+        position: "absolute",
+        right: 0,
+        bottom: "5%",
+        left: 0,
+        margin: "auto",
         boxSizing: "border-box"
     }
 }

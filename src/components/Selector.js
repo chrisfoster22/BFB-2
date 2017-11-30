@@ -30,14 +30,16 @@ export default class Selector extends Component {
 const styles = {
   optionsContainer: {
       padding: 30,
-      maxWidth: 720
+      maxWidth: 800
   },
   options: {
       display: "flex",
       flexDirection: "column",
       flexWrap: "wrap",
       height: 300,
-      minHeight: 200
+      minHeight: 200,
+      overflowX: "scroll",
+      overflowY: "scroll"
   },
   message: {
       marginBottom: 30,
