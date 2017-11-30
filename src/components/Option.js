@@ -51,7 +51,7 @@ export default class Option extends Component {
 const styles = {
   option: {
       display: "flex",
-      margin: "10px 0",
+      margin: "10px 4px",
       color: "#3F4345",
       textTransform: "capitalize",
       fontWeight: 300,
