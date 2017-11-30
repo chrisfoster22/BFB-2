@@ -7,19 +7,20 @@
 }
 
 .App-header {
+    position: relative;
     height: 325px;
     max-height: 400px;
     margin: auto;
-    position: relative;
+    transition: all 1s;
 }
 
 .App-header::after {
     content: " ";
     position: absolute;
-    left: 0;
     top: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     background: linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.00) 65%);
 }
 
