@@ -18,13 +18,13 @@ export default class ChooseName extends Component {
 
 const styles = {
     chooseNameContainer: {
-      display: "relative",
-      width: "75%",
-      margin: "0 auto",
-      fontWeight: 300
+        display: "relative",
+        width: "75%",
+        margin: "0 auto",
+        fontWeight: 300
     },
     chooseNameLabel: {
-      color: "#A1A9AD"
+        color: "#A1A9AD"
     },
     chooseNameInput: {
         width: "100%",

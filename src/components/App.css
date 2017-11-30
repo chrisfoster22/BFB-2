@@ -7,7 +7,6 @@
 
 .App-header {
     position: relative;
-    height: 150px;
     padding: 20px 20px 20px 30px;
     transition: all 1s;
     height: 325px;
@@ -22,7 +21,7 @@
     .selection-panel {
         width: 100%;
     }
-    
+
     .side-panel {
         display: none;
     }
