@@ -29,3 +29,15 @@
         display: none;
     }
 }
+
+@keyframes scrollIn {
+    0% {
+        width: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+}
