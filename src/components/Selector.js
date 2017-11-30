@@ -25,7 +25,8 @@ export default class Selector extends Component {
 
 const styles = {
   optionsContainer: {
-        padding: 30
+        padding: 30,
+        maxWidth: 720
   },
   options: {
     display: "flex",
