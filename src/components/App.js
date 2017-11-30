@@ -119,15 +119,14 @@ class App extends Component {
     render() {
         let currentStep = this.state.steps[this.state.currentStep];
         let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
-        let gradient = this.state.currentStep === 8 ? "none" : `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.00) 65%)`
         return (
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
                     <div>
-                        <header style={{backgroundImage: gradient}}>
-                            <div className="App-header"
+                        <header className="App-header" style={{height: this.state.headerHeight}}>
+                            <div className="App-header-image"
                             style={{
-                                backgroundSize: "100% 100%",
+                                 backgroundSize: "100% 100%",
                                  backgroundImage: `url(${currentStep.backgroundImg})`,
                                  height: this.state.headerHeight}}
                             ref={(header) => this.header = header}>
@@ -137,7 +136,7 @@ class App extends Component {
                             </div>
                             </div>
                         </header>
-                    
+
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
                     <div style={styles.buttonContainer}>
@@ -250,8 +249,6 @@ class App extends Component {
         let selectorHeight = 500 - headerHeight;
         this.setState({headerHeight, selectorHeight})
     }
-
-
 }
 
 const styles = {
@@ -274,7 +271,8 @@ const styles = {
         position: "absolute",
         bottom: 0,
         color: "#ffffff",
-        fontWeight: 300
+        fontWeight: 300,
+        zIndex: 1
     },
     headerMsg: {
         margin: "5px 0px 15px",
