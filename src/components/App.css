@@ -13,6 +13,16 @@
 .App-header {
     position: relative;
     height: 325px;
+    min-height: 200px;
+    max-height: 400px;
+    margin: auto;
+    transition: all 1s;
+}
+
+.App-header-last-step {
+    position: relative;
+    height: 325px;
+    min-height: 200px;
     max-height: 400px;
     margin: auto;
     transition: all 1s;
@@ -31,6 +41,7 @@
 .App-header-image {
     position: relative;
     height: 325px;
+    min-height: 200px;
     max-height: 400px;
     padding: 20px 20px 20px 30px;
     transition: all 1s;

@@ -148,7 +148,7 @@ class App extends Component {
                         <div className="App-mobile-logo" style={styles.logoContainer} >
                             <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
                         </div>
-                        <header className="App-header" style={{height: this.state.headerHeight}}>
+                        <header className={this.state.currentStep === 8 ? "App-header-last" : "App-header"} style={{height: this.state.headerHeight}}>
                             <div className="App-header-image"
                             style={{
                                  backgroundSize: "100% 100%",
