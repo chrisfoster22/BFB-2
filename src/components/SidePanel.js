@@ -34,21 +34,22 @@ export default class SidePanel extends Component {
             if (selected.join) {
                 selected = selected.map((multiChoice, i) => {
                     return (
-                        <div key={i} style={styles.multiChoice}>
+                        <div key={i} style={{...styles.multiChoice, opacity: 1}}>
                             <div style={{...styles.multiChoiceColor, backgroundColor: this.colors[multiChoice]}}> </div>
                             <span>{multiChoice}</span>
                         </div>
                     )
                 })
             }
+            let opacity = selected.length > 0 ? 1 : 0;
             return(
                 <div key={i} style={styles.stepContainer}>
                     <div style={styles.step}><span style={{...styles.icon, backgroundImage: `url(${step.icon}`}}></span>{step.text}</div>
-                    <div style={styles.selected}>{selected}</div>
+                    <div style={{...styles.selected, opacity: opacity}}>{selected}</div>
                 </div>
             )
         })
-
+        
         return(
             <div style={styles.sidePanel}>
                 <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
@@ -81,13 +82,15 @@ const styles = {
         paddingLeft: 40,
         fontSize: 20,
         fontWeight: 300,
-        textTransform: "capitalize"
+        textTransform: "capitalize",
+        transition: "all .7s"
     },
     multiChoice: {
         display: "inline-block",
         minWidth: 100,
         marginRight: "5%",
         fontSize: 14,
+        opacity: 0,
         transition: "all 1s"
     },
     multiChoiceColor: {
