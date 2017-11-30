@@ -33,7 +33,12 @@ export default class SidePanel extends Component {
             let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
             if (selected.join) {
                 selected = selected.map((multiChoice, i) => {
-                    return <span key={i} style={{...styles.multiChoice, backgroundColor: this.colors[multiChoice]}}>{multiChoice}</span>
+                    return (
+                        <div key={i} style={styles.multiChoice}>
+                            <div style={{...styles.multiChoiceColor, backgroundColor: this.colors[multiChoice]}}> </div>
+                            <span>{multiChoice}</span>
+                        </div>
+                    )
                 })
             }
             return(
@@ -61,7 +66,7 @@ const styles = {
         marginBottom: 45
     },
     stepContainer: {
-        height: 75,
+        minHeight: 75,
         marginBottom: 15
     },
     step: {
@@ -81,8 +86,15 @@ const styles = {
     multiChoice: {
         display: "inline-block",
         minWidth: 100,
+        marginRight: "5%",
         fontSize: 14,
         transition: "all 1s"
+    },
+    multiChoiceColor: {
+        height: 9,
+        borderRadius: 100,
+        marginTop: 5,
+        marginBottom: 5
     },
     icon: {
         height: 30,
