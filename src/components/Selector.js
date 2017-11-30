@@ -17,7 +17,7 @@ export default class Selector extends Component {
         return(
             <div style={styles.optionsContainer}>
                 <h2 style={styles.message}>{this.props.step.message}</h2>
-                <div>{options}</div>
+                <div style={{...styles.options, height: this.props.height}}>{options}</div>
             </div>
         )
     }
@@ -26,6 +26,12 @@ export default class Selector extends Component {
 const styles = {
   optionsContainer: {
         padding: 30
+  },
+  options: {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    height: 300
   },
     message: {
         marginBottom: 30,
