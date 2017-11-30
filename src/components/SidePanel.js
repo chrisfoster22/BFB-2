@@ -9,6 +9,8 @@ import oilsIcon from '../assets/icons/oils.png';
 import buttersIcon from '../assets/icons/butters.png';
 import boostersIcon from '../assets/icons/boosters.png';
 
+import Products from '.././data/products';
+
 export default class SidePanel extends Component {
 
     constructor(props) {
@@ -22,6 +24,7 @@ export default class SidePanel extends Component {
             {type: "butters", text: "Butters", icon: buttersIcon},
             {type: "boosters", text: "Boosters", icon: boostersIcon}
         ]
+        this.colors = Products.colors;
     }
 
     render() {
@@ -30,7 +33,7 @@ export default class SidePanel extends Component {
             let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
             if (selected.join) {
                 selected = selected.map((multiChoice, i) => {
-                    return <span key={i} style={styles.multiChoice}>{multiChoice}</span>
+                    return <span key={i} style={{...styles.multiChoice, backgroundColor: this.colors[multiChoice]}}>{multiChoice}</span>
                 })
             }
             return(
@@ -71,7 +74,7 @@ const styles = {
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 40,
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: 300,
         textTransform: "capitalize"
     },
