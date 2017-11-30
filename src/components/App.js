@@ -94,7 +94,7 @@ class App extends Component {
                     message: null,
                     headerMsg: "",
                     type: "customName",
-                    selection: ""
+                    selection: "name"
                 },
                 {
                     message: "Ready to checkout!",
@@ -116,8 +116,8 @@ class App extends Component {
     }
 
     render() {
-
         let currentStep = this.state.steps[this.state.currentStep];
+        let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
         return (
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
@@ -136,7 +136,7 @@ class App extends Component {
                     <div style={styles.buttonContainer}>
                         <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
                         <Button
-                            disabled={currentStep.selection.length < 1}
+                            disabled={disabled}
                             click={this.nextStep.bind(this)}
                             text="Next"/>
                     </div>
@@ -257,7 +257,7 @@ const styles = {
     selectorContainer: {
         position: "relative",
         paddingBottom: 100,
-        boxShadow: "3px 0 20px 0 rgba(0,0,0,0.11)"
+        boxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)"
     },
     sidePanelContainer: {
         width: "45%"
