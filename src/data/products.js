@@ -323,28 +323,51 @@ const Products = {
             ]
         }
     },
-    scentColors: {
-        "chamomile": "",
-        "cinnamon": "",
-        "eucalyptus": "",
-        "frankincense": "",
-        "grapefruit": "",
-        "lavender": "",
-        "lemon": "",
-        "lemongrass": "",
-        "lime": "",
-        "marjoram": "",
-        "myrrh": "",
-        "orange": "",
-        "peppermint": "",
-        "rose": "",
-        "spearmint": "",
-        "tangerine": "",
-        "vanilla": "",
-        "vetiver": "",
-        "wintergreen": "",
-        "ylang ylang": "",
-        "unscented": ""
+    colors: {
+        // scents
+        "chamomile": "#EBBE3D",
+        "cinnamon": "#7C3A00",
+        "eucalyptus": "#339966",
+        "frankincense": "#E6BE7B",
+        "grapefruit": "#F59074",
+        "lavender": "#A080AD",
+        "lemon": "#FCF141",
+        "lemongrass": "#A2BA64",
+        "lime": "#B5E71D",
+        "marjoram": "#8E885D",
+        "myrrh": "#9D613A",
+        "orange": "#FF6600",
+        "peppermint": "#D7E7D0",
+        "rose": "#B21C0E",
+        "spearmint": "#CBFFFA",
+        "tangerine": "#F28500",
+        "vanilla": "#F3E5AB",
+        "vetiver": "#84B500",
+        "wintergreen": "#56887D",
+        "ylang ylang": "#DAE53E",
+        "unscented": "#D3D3D3",
+        // butters
+        "cocoa": "#618E00",
+        "kokum": "#7A0000",
+        "mango": "#FFBC00",
+        "shea": "#E1CC49",
+        "none": "#D3D3D3",
+        // oils
+        "avocado": "#618E00",
+        "coconut": "#452F1B",
+        "jojoba": "#6B2026",
+        "olive": "#979817",
+        "sweet almond": "#E99A59",
+        // boosters
+        "calendula": "#FF8A00",
+        "carrot seed": "#D9BF90",
+        "chickweed": "#006D1A",
+        "dandelion": "#FBF480",
+        "matcha green tea": "#98BD03",
+        "raspberry seed": "#E1553F",
+        "sea buckhorn": "#FF7E00",
+        "turmeric": "#FFB500",
+        "valerian": "#AE6977"
     }
 }
 

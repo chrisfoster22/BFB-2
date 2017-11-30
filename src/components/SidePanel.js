@@ -9,6 +9,8 @@ import oilsIcon from '../assets/icons/oils.png';
 import buttersIcon from '../assets/icons/butters.png';
 import boostersIcon from '../assets/icons/boosters.png';
 
+import Products from '.././data/products';
+
 export default class SidePanel extends Component {
 
     constructor(props) {
