@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import logo from '../assets/logo.svg';
 
-import recipientIcon from '../assets/icons/recipient.png';
-import focusAreaIcon from '../assets/icons/focusArea.png';
-import productIcon from '../assets/icons/product.png';
-import scentsIcon from '../assets/icons/scents.png';
-import oilsIcon from '../assets/icons/oils.png';
-import buttersIcon from '../assets/icons/butters.png';
-import boostersIcon from '../assets/icons/boosters.png';
+import recipientIcon from '../assets/icons/recipient.svg';
+import focusAreaIcon from '../assets/icons/focusArea.svg';
+import productIcon from '../assets/icons/product.svg';
+import scentsIcon from '../assets/icons/scents.svg';
+import oilsIcon from '../assets/icons/oils.svg';
+import buttersIcon from '../assets/icons/butters.svg';
+import boostersIcon from '../assets/icons/boosters.svg';
 
 import Products from '.././data/products';
 
@@ -111,10 +111,10 @@ const styles = {
         animation: "fadeIn 0.5s"
     },
     icon: {
-        height: 30,
-        width: 30,
+        height: 20,
+        width: 20,
         display: "inline-block",
-        margin: "-2px 10px 0 0",
+        margin: "1px 10px 0 0",
         backgroundPosition: "center",
         backgroundSize: "cover"
     }
