@@ -111,9 +111,10 @@ class App extends Component {
 
     componentWillMount() {
         let windowWidth = window.innerWidth;
+        let mobile = windowWidth < 768;
         let headerHeight = windowWidth * .55 / 2.4
-        let selectorHeight = 500 - headerHeight;
-        this.setState({headerHeight, selectorHeight, windowWidth})
+        let selectorHeight = 600 - headerHeight;
+        this.setState({headerHeight, selectorHeight, windowWidth, mobile})
     }
 
     componentDidMount() {
@@ -123,13 +124,12 @@ class App extends Component {
     render() {
         let currentStep = this.state.steps[this.state.currentStep];
         let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
-        let mobile = this.state.windowWidth < 768;
 
         if (this.state.currentStep === 9) {
           return(
               <div>
                   <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
-                  <div style={styles.buttonContainer}>
+                  <div style={this.state.mobile ? {...styles.buttonContainer, ...styles.mobileBtnContainer } : styles.buttonContainer}>
                       <Button link={true} hidden={false} click={this.prevStep.bind(this)} text="< Back"/>
                       <Button
                           cartUrl={this.state.cartUrl}
@@ -164,13 +164,13 @@ class App extends Component {
 
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
-                    <div style={styles.buttonContainer}>
+                    <div style={this.state.mobile ? {...styles.buttonContainer, ...styles.mobileBtnContainer} : styles.buttonContainer}>
                         <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
                         <Button
-                            cartUrl={(this.state.currentStep === 8 && !mobile) || (this.state.currentStep === 9) ? this.state.cartUrl : null}
+                            cartUrl={(this.state.currentStep === 8 && !this.state.mobile) || (this.state.currentStep === 9) ? this.state.cartUrl : null}
                             disabled={disabled}
                             click={this.nextStep.bind(this)}
-                            text={(this.state.currentStep === 8 && !mobile) || (this.state.currentStep === 9) ? "Add to Cart" : "Next"}/>
+                            text={(this.state.currentStep === 8 && !this.state.mobile) || (this.state.currentStep === 9) ? "Add to Cart" : "Next"}/>
                     </div>
                 </main>
               <aside style={styles.sidePanelContainer} className="side-panel">
@@ -262,6 +262,7 @@ class App extends Component {
                 )
             default:
                 return( <Selector
+                    mobile={this.state.mobile}
                     step={currentStep}
                     height={this.state.selectorHeight}
                     options={this.getOptions()}
@@ -274,10 +275,11 @@ class App extends Component {
 
     updateDimensions() {
         let windowWidth = window.innerWidth;
+        let mobile = windowWidth < 768;
         let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
         let headerHeight = headerWidth / 2.4;
-        let selectorHeight = 500 - headerHeight;
-        this.setState({headerHeight, selectorHeight, windowWidth})
+        let selectorHeight = 540 - headerHeight;
+        this.setState({headerHeight, selectorHeight, windowWidth, mobile})
     }
 }
 
@@ -322,6 +324,12 @@ const styles = {
         left: 0,
         margin: "auto",
         boxSizing: "border-box"
+    },
+    mobileBtnContainer: {
+      position: "fixed",
+      bottom: 0,
+      padding: "3% 0 8%",
+      backgroundColor: "white"
     }
 }
 

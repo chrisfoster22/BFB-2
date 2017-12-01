@@ -21,7 +21,7 @@ export default class Selector extends Component {
         return(
             <div style={styles.optionsContainer}>
                 <h2 style={styles.message}>{this.props.step.message}</h2>
-                <div style={{...styles.options, height: this.props.height, fontSize: fontSize}}>{options}</div>
+                <div style={this.props.mobile ? {...styles.options, ...styles.optionsMobile} : {...styles.options, height: this.props.height, fontSize: fontSize}}>{options}</div>
             </div>
         )
     }
@@ -40,6 +40,10 @@ const styles = {
       minHeight: 200,
       overflowX: "scroll",
       overflowY: "scroll"
+  },
+  optionsMobile: {
+    paddingBottom: "10%",
+    height: 600
   },
   message: {
       marginBottom: 30,
