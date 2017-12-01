@@ -23,11 +23,21 @@ export default class ChooseName extends Component {
     render() {
         return(
             <div style={styles.chooseNameContainer}>
-                <label style={styles.chooseNameLabel} htmlFor="product">Name Your Product</label>
-                <input style={styles.chooseNameInput} type="text" name="product" id="product" autoComplete="off" onChange={this.onTextChange.bind((this))} />
+                <label style={this.state.focused ? {...styles.chooseNameLabel, top: 0} : styles.chooseNameLabel} htmlFor="product">Name Your Product</label>
+                <input onBlur={this.blur.bind(this)} onFocus={this.focus.bind(this)} style={styles.chooseNameInput} type="text" name="product" id="product" autoComplete="off" onChange={this.onTextChange.bind((this))} />
                 <div style={{height: this.props.height - 130}}></div>
             </div>
         )
+    }
+    
+    focus() {
+      this.setState({focused: true})
+    }
+    
+    blur() {
+      if (this.props.selection.customName.length === 0) {
+          this.setState({focused: false})
+      }
     }
 
     onTextChange(e) {
@@ -64,7 +74,11 @@ const styles = {
         fontWeight: 300
     },
     chooseNameLabel: {
-        color: "#A1A9AD"
+        color: "#A1A9AD",
+        pointerEvents: "none",
+        position: "relative",
+        top: 50,
+        transition: "all .5s ease-in-out"
     },
     chooseNameInput: {
         width: "100%",
