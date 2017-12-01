@@ -119,6 +119,15 @@ class App extends Component {
 
     componentDidMount() {
         window.addEventListener("resize", this.updateDimensions.bind(this));
+        window.addEventListener("keypress", (e) => {
+            var key = e.which || e.keyCode;
+            let currentStep = this.state.steps[this.state.currentStep];
+            let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  this.state.selection[currentStep.type].length < 1
+            
+            if (key === 13 && !disabled) {
+                this.nextStep.bind(this)()
+            }
+        })
         setTimeout(() => {
           document.getElementsByClassName("App-header-image")[0].style.opacity = 1}, 300);
     }
