@@ -15,7 +15,7 @@
     min-height: 200px;
     max-height: 400px;
     margin: auto;
-    transition: all 1s;
+    transition: all 0.8s;
 }
 
 .App-header-last-step {
@@ -24,7 +24,7 @@
     min-height: 200px;
     max-height: 400px;
     margin: auto;
-    transition: all 1s;
+    transition: all 0.8s;
 }
 
 .App-header::after {
@@ -43,7 +43,7 @@
     min-height: 200px;
     max-height: 400px;
     padding: 20px 20px 20px 30px;
-    transition: all 1s;
+    transition: all 0.8s;
     box-sizing: border-box;
 }
 
