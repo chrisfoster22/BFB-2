@@ -128,6 +128,9 @@ class App extends Component {
         if (this.state.currentStep === 9) {
           return(
               <div>
+              <div className="App-mobile-logo" style={styles.logoContainer} >
+                  <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
+              </div>
                   <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
                   <div style={this.state.mobile ? {...styles.buttonContainer, ...styles.mobileBtnContainer } : styles.buttonContainer}>
                       <Button link={true} hidden={false} click={this.prevStep.bind(this)} text="< Back"/>
@@ -276,7 +279,7 @@ class App extends Component {
     updateDimensions() {
         let windowWidth = window.innerWidth;
         let mobile = windowWidth < 768;
-        let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
+        let headerWidth = this.state.currentStep < 9 ? ReactDOM.findDOMNode(this.header).getBoundingClientRect().width : 0
         let headerHeight = headerWidth / 2.4;
         let selectorHeight = window.innerHeight - headerHeight - 200;
         this.setState({headerHeight, selectorHeight, windowWidth, mobile})
