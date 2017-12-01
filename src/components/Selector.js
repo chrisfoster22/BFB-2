@@ -7,11 +7,16 @@ export default class Selector extends Component {
     let num = 1;
     if (nextProps.stepNum < this.props.stepNum) {
       num = -1;
-    } 
-    console.log(nextProps);
+    }
     if (nextProps.stepNum > 3 && nextProps.product && nextProps.product.skip && nextProps.product.skip.indexOf(nextProps.step.type) > -1) {
       this.props.chooseProduct(this.props.step, "none", false, num);
     }
+  }
+  
+  componentWillMount() {
+      if (this.props.product && this.props.product.skip.indexOf(this.props.step.type > -1)) {
+          this.props.chooseProduct(this.props.step, "none", false, -1);
+      }
   }
 
     render() {
