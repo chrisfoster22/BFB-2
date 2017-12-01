@@ -130,10 +130,10 @@ class App extends Component {
         if (this.state.currentStep === 9) {
           return(
               <div>
-              <div className="App-mobile-logo" style={styles.logoContainer} >
+              <h1><a href="https://www.bestfriendbeauty.org"><div className="App-mobile-logo" style={styles.logoContainer} >
                   <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
-              </div>
-                  <h1 className="App-header-text" style={{textAlign: "center", fontWeight: 300}}>{this.state.selection.customName}</h1>
+              </div></a></h1>
+                  <h2 className="App-header-text" style={{textAlign: "center", fontWeight: 300}}>{this.state.selection.customName}</h2>
                   <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
                   <div style={this.state.mobile ? {...styles.buttonContainer, ...styles.mobileBtnContainer } : styles.buttonContainer}>
                       <Button link={true} hidden={false} click={this.prevStep.bind(this)} text={this.state.windowWidth > 400 ? "< Back" : "Back"} />
@@ -158,9 +158,9 @@ class App extends Component {
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
                     <div>
-                        <div className="App-mobile-logo" style={styles.logoContainer} >
+                        <a href="https://www.bestfriendbeauty.org"><div className="App-mobile-logo" style={styles.logoContainer} >
                             <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
-                        </div>
+                        </div></a>
                         <header className={headerClass} style={{height: this.state.headerHeight}}>
                             <div className="App-header-image"
                             style={{
@@ -200,7 +200,10 @@ class App extends Component {
     prevStep() {
         if (this.state.currentStep === 4) {
             this.setState({currentStep: 3, selection: {...this.state.selection, "scents": [], "oils": [], "butters": [], "boosters": [], "customName": "" }})
-        } else {
+        } else if (this.state.currentStep === 3) {
+          this.setState({currentStep: 2, selection: {...this.state.selection, "scents": [], "oils": [], "butters": [], "boosters": [], "customName": "", product: "" }})
+        }
+          else {
             this.setState({currentStep: (this.state.currentStep - 1)})
         }
     }

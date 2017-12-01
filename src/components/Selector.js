@@ -53,8 +53,7 @@ const styles = {
       flexDirection: "column",
       flexWrap: "wrap",
       height: 300,
-      minHeight: 200,
-      overflowY: "scroll"
+      minHeight: 200
   },
   optionsMobile: {
       marginBottom: "20%",

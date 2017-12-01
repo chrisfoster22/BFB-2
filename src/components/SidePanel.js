@@ -28,8 +28,14 @@ export default class SidePanel extends Component {
     }
 
     render() {
+        let shownSteps = this.steps;
+        if (this.props.selection.product.name && this.props.selection.product.skip) {
+          shownSteps = this.steps.filter((step) => {
+            return this.props.selection.product.skip.indexOf(step.type) === -1
+          });
+        }
 
-        let stepDivs = this.steps.map((step, i) => {
+        let stepDivs = shownSteps.map((step, i) => {
             let selected = this.props.selection[step.type].name ? this.props.selection[step.type].name : this.props.selection[step.type];
             if (selected.join) {
                 selected = selected.map((multiChoice, i) => {
@@ -55,7 +61,7 @@ export default class SidePanel extends Component {
 
         return(
             <div style={styles.sidePanel}>
-                {this.props.current < 9 && <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>}
+                {this.props.current < 9 && <a href="https://www.bestfriendbeauty.org"><img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/></a>}
                 <div style={this.props.current === 9 ? {paddingBottom: 100} : {}}>{stepDivs}</div>
             </div>
         )
