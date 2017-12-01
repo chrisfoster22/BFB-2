@@ -38,7 +38,6 @@ const styles = {
       flexWrap: "wrap",
       height: 300,
       minHeight: 200,
-      overflowX: "scroll",
       overflowY: "scroll"
   },
   optionsMobile: {
