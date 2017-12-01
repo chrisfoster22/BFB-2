@@ -306,8 +306,6 @@ const styles = {
         position: "relative",
         height: "100%",
         paddingBottom: 100,
-        MozBoxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
-        WebkitBoxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
         boxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
         boxSizing: "border-box"
     },
@@ -324,12 +322,12 @@ const styles = {
         boxSizing: "border-box"
     },
     mobileBtnContainer: {
-      position: "fixed",
-      right: 0,
-      left: 0,
-      bottom: 0,
-      padding: "3% 5% 8%",
-      backgroundColor: "white"
+        position: "fixed",
+        right: 0,
+        bottom: 0,
+        left: 0,
+        padding: "3% 5% 8%",
+        backgroundColor: "white"
     }
 }
 

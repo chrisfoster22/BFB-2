@@ -41,8 +41,9 @@ const styles = {
       overflowY: "scroll"
   },
   optionsMobile: {
-    paddingBottom: "10%",
-    height: 600
+      marginBottom: "20%",
+      height: "auto",
+      maxHeight: 600
   },
   message: {
       marginBottom: 30,

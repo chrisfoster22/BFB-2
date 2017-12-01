@@ -100,14 +100,10 @@ const styles = {
         borderRadius: 100,
         marginTop: 5,
         marginBottom: 5,
-        WebkitAnimation: "scrollIn 0.5s",
-        MozAnimation: "scrollIn 0.5s",
         animation: "scrollIn 0.5s"
     },
     multiChoiceText: {
         opacity: 1,
-        WebkitAnimation: "fadeIn 0.5s",
-        MozAnimation: "fadeIn 0.5s",
         animation: "fadeIn 0.5s"
     },
     icon: {
