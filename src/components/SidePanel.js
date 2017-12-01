@@ -55,8 +55,8 @@ export default class SidePanel extends Component {
 
         return(
             <div style={styles.sidePanel}>
-                <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
-                <div>{stepDivs}</div>
+                {this.props.current < 9 && <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>}
+                <div style={this.props.current === 9 ? {paddingBottom: 100} : {}}>{stepDivs}</div>
             </div>
         )
     }
