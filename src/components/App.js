@@ -307,8 +307,7 @@ const styles = {
     },
     selectorContainer: {
         position: "relative",
-        height: "100%",
-        paddingBottom: 100,
+        paddingBottom: 30,
         boxShadow: "3px -16px 20px 0 rgba(0,0,0,0.11)",
         boxSizing: "border-box"
     },
