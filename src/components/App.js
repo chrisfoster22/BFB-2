@@ -113,7 +113,7 @@ class App extends Component {
         let windowWidth = window.innerWidth;
         let mobile = windowWidth < 768;
         let headerHeight = windowWidth * .55 / 2.4
-        let selectorHeight = 600 - headerHeight;
+        let selectorHeight = window.innerHeight - headerHeight - 200;
         this.setState({headerHeight, selectorHeight, windowWidth, mobile})
     }
 
@@ -278,7 +278,7 @@ class App extends Component {
         let mobile = windowWidth < 768;
         let headerWidth = ReactDOM.findDOMNode(this.header).getBoundingClientRect().width;
         let headerHeight = headerWidth / 2.4;
-        let selectorHeight = 500 - headerHeight;
+        let selectorHeight = window.innerHeight - headerHeight - 200;
         this.setState({headerHeight, selectorHeight, windowWidth, mobile})
     }
 }
@@ -317,16 +317,16 @@ const styles = {
     buttonContainer: {
         display: "flex",
         justifyContent: "space-between",
-        padding: "0 5%",
-        position: "absolute",
-        right: 0,
+        position: "relative",
         bottom: "5%",
-        left: 0,
+        padding: "0 5%",
         margin: "auto",
         boxSizing: "border-box"
     },
     mobileBtnContainer: {
       position: "fixed",
+      right: 0,
+      left: 0,
       bottom: 0,
       padding: "3% 5% 8%",
       backgroundColor: "white"
