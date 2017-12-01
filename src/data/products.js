@@ -4,7 +4,8 @@ const Products = {
             "bath": [
                 {
                     name: "sugar scrub",
-                    productId: "381797826593"
+                    productId: "381797826593",
+                    
                 },
                 {
                     name: "salt scrub",
@@ -12,11 +13,13 @@ const Products = {
                 },
                 {
                     name: "bath bombs",
-                    productId: "381799596065"
+                    productId: "381799596065",
+                    skip: ["butters"]
                 },
                 {
                     name: "bath salts",
-                    productId: "382571348001"
+                    productId: "382571348001",
+                    skip: ["butters"]
                 }
             ],
             "outdoor": [
@@ -26,7 +29,8 @@ const Products = {
                 },
                 {
                     name: "sunscreen",
-                    productId: "382580785185"
+                    productId: "382580785185",
+                    skip: ["oils", "butters", "boosters"]
                 },
                 {
                     name: "mosquito repellent",
@@ -40,17 +44,20 @@ const Products = {
                 },
                 {
                     name: "perfume",
-                    productId: "382584389665"
+                    productId: "382584389665",
+                    skip: ["butters"]
                 }
             ],
             "face/mouth": [
                 {
                     name: "facial masks",
-                    productId: "382586978337"
+                    productId: "382586978337",
+                    skip: ["butters"]
                 },
                 {
                     name: "facial serum",
-                    productId: "382591860769"
+                    productId: "382591860769",
+                    skip: ["butters"]
                 },
                 {
                     name: "lip balm",
@@ -58,15 +65,18 @@ const Products = {
                 },
                 {
                     name: "tooth polish",
-                    productId: "382594383905"
+                    productId: "382594383905",
+                    skip: ["oils", "butters", "boosters"]
                 },
                 {
                     name: "toner refresher",
-                    productId: "382597201953"
+                    productId: "382597201953",
+                    skip: ["oils", "butters", "boosters"]
                 },
                 {
                     name: "facial cleanser",
-                    productId: "382599135265"
+                    productId: "382599135265",
+                    skip: ["butters", "boosters"]
                 }
             ],
             "body": [
@@ -84,11 +94,13 @@ const Products = {
                 },
                 {
                     name: "sunscreen",
-                    productId: "382580785185"
+                    productId: "382580785185",
+                    skip: ["oils", "butters", "boosters"]
                 },
                 {
                     name: "deodorant pit paste",
-                    productId: "382736629793"
+                    productId: "382736629793",
+                    skip: ["oils"]
                 }
             ]
         },
@@ -96,13 +108,15 @@ const Products = {
             "bath": [
                 {
                     name: "bath bombs",
-                    productId: "382764089377"
+                    productId: "382764089377",
+                    skip: ["butters", "boosters"]
                 }
             ],
             "outdoor": [
                 {
                     name: "deodorant spray",
-                    productId: "382768676897"
+                    productId: "382768676897",
+                    skip: ["butters"]
                 },
                 {
                   name: "mosquito repellent",
@@ -136,7 +150,8 @@ const Products = {
             "face/mouth": [
                 {
                     name: "toothpaste",
-                    productId: "382787387425"
+                    productId: "382787387425",
+                    skip: ["oils", "butters", "boosters"]
                 },
                 {
                     name: "detangling spray",
@@ -211,7 +226,8 @@ const Products = {
                 },
                 {
                     name: "deodorant spray",
-                    productId: "382768676897"
+                    productId: "382768676897",
+                    skip: ["butters"]
                 },
                 {
                     name: "mosquito repellent",

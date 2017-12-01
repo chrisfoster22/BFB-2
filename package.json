@@ -2,8 +2,9 @@
   "name": "best-friend-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "custom.bestfriendbeauty.org",
+  "homepage": "",
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "1.0.17",

@@ -119,7 +119,10 @@ class App extends Component {
 
     componentDidMount() {
         window.addEventListener("resize", this.updateDimensions.bind(this));
+        setTimeout(() => {
+          document.getElementsByClassName("App-header-image")[0].style.opacity = 1}, 300);
     }
+    
     render() {
         let currentStep = this.state.steps[this.state.currentStep];
         let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
@@ -143,7 +146,14 @@ class App extends Component {
               </div>
           )
         }
-
+        
+        let headerClass = "App-header";
+        if (this.state.currentStep === 8) {
+          headerClass = "App-header-last-step";
+        } else if (this.state.currentStep === 1) {
+          headerClass = "App-header-first-step";
+        }
+        
         return (
             <div className="App">
                 <main style={styles.selectorContainer} className="selection-panel">
@@ -151,7 +161,7 @@ class App extends Component {
                         <div className="App-mobile-logo" style={styles.logoContainer} >
                             <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
                         </div>
-                        <header className={this.state.currentStep === 8 ? "App-header-last" : "App-header"} style={{height: this.state.headerHeight}}>
+                        <header className={headerClass} style={{height: this.state.headerHeight}}>
                             <div className="App-header-image"
                             style={{
                                  backgroundSize: "100% 100%",
@@ -199,7 +209,7 @@ class App extends Component {
         this.setState({selection: {...this.state.selection, customName: name}, cartUrl: cartUrl})
     }
 
-    chooseProduct(step, option, isArray) {
+    chooseProduct(step, option, isArray, num=0) {
         let newSelection = {...this.state.selection};
         if (isArray) {
             if (["none", "unscented"].indexOf(option) > -1) {
@@ -220,7 +230,7 @@ class App extends Component {
 
         let newSteps = {...this.state.steps}
         newSteps[this.state.currentStep].selection = newSelection[step];
-        this.setState({selection: newSelection, steps: newSteps });
+        this.setState({selection: newSelection, steps: newSteps, currentStep: this.state.currentStep + num });
     }
 
     unChooseProduct(step, option) {
@@ -242,6 +252,7 @@ class App extends Component {
                 return Products.products[this.state.selection.recipient][this.state.selection.focusArea].filter((x) => {return x.options !== false});
             case 4:
                 return Products.options[this.state.selection.recipient]["scents"];
+                
             case 5:
                 return Products.options[this.state.selection.recipient]["oils"];
             case 6:
@@ -266,7 +277,9 @@ class App extends Component {
                 )
             default:
                 return( <Selector
+                    product={this.state.selection.product.name ? this.state.selection.product : null}
                     mobile={this.state.mobile}
+                    stepNum={this.state.currentStep}
                     step={currentStep}
                     height={this.state.selectorHeight}
                     options={this.getOptions()}

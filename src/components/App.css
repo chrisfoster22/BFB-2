@@ -18,6 +18,15 @@
     transition: all 1s;
 }
 
+.App-header-first-step {
+    position: relative;
+    height: 325px;
+    min-height: 200px;
+    max-height: 400px;
+    margin: auto;
+    transition: all 1s;
+}
+
 .App-header-last-step {
     position: relative;
     height: 325px;
@@ -45,6 +54,7 @@
     padding: 20px 20px 20px 30px;
     transition: all 1s;
     box-sizing: border-box;
+    opacity: 0;
 }
 
 .App-header-text {
