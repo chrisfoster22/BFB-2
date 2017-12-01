@@ -125,7 +125,7 @@ class App extends Component {
     
     render() {
         let currentStep = this.state.steps[this.state.currentStep];
-        let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
+        let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  this.state.selection[currentStep.type].length < 1
 
         if (this.state.currentStep === 9) {
           return(
