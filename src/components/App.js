@@ -256,8 +256,9 @@ class App extends Component {
     getSelectionPanel(currentStep) {
         switch(this.state.currentStep) {
             case 8:
+                let height = this.state.selectorHeight + 69.327 + 60
                 return(
-                    <ChooseName height={this.state.selectorHeight} selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
+                    <ChooseName height={height} selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
                 )
             case 9:
                 return(

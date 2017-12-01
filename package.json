@@ -2,7 +2,7 @@
   "name": "best-friend-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chrisfoster22.github.io/BFB-2",
+  "homepage": "custom.bestfriendbeauty.org",
   "dependencies": {
     "react": "^16.1.1",
     "react-dom": "^16.1.1",

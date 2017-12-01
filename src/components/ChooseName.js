@@ -22,10 +22,9 @@ export default class ChooseName extends Component {
 
     render() {
         return(
-            <div style={styles.chooseNameContainer}>
+            <div style={{...styles.chooseNameContainer, height: this.props.height}}>
                 <label style={this.state.focused ? {...styles.chooseNameLabel, top: 0} : styles.chooseNameLabel} htmlFor="product">Name Your Product</label>
                 <input onBlur={this.blur.bind(this)} onFocus={this.focus.bind(this)} style={styles.chooseNameInput} type="text" name="product" id="product" autoComplete="off" onChange={this.onTextChange.bind((this))} />
-                <div style={{height: this.props.height - 130}}></div>
             </div>
         )
     }
@@ -70,7 +69,7 @@ const styles = {
     chooseNameContainer: {
         display: "relative",
         width: "75%",
-        margin: "20px auto 25%",
+        margin: "0 auto",
         fontWeight: 300
     },
     chooseNameLabel: {
