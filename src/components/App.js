@@ -179,7 +179,7 @@ class App extends Component {
                                  height: this.state.headerHeight}}
                             ref={(header) => this.header = header}>
                             <div style={styles.headerText}>
-                                <div>{`Step ${this.state.currentStep} of 7`}</div>
+                                <div style={{display: "none"}}>{`Step ${this.state.currentStep} of 7`}</div>
                                 <h1 className="App-header-text" style={styles.headerMsg}>{currentStep.headerMsg}</h1>
                             </div>
                             </div>
