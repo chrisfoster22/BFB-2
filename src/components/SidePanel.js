@@ -112,6 +112,6 @@ const styles = {
         display: "inline-block",
         margin: "1px 10px 0 0",
         backgroundPosition: "center",
-        backgroundSize: "cover"
+        backgroundSize: "100% 100%"
     }
 }
