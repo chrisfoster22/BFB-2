@@ -25,6 +25,7 @@ export default class ChooseName extends Component {
             <div style={styles.chooseNameContainer}>
                 <label style={styles.chooseNameLabel} htmlFor="product">Name Your Product</label>
                 <input style={styles.chooseNameInput} type="text" name="product" id="product" autoComplete="off" onChange={this.onTextChange.bind((this))} />
+                <div style={{height: this.props.height - 130}}></div>
             </div>
         )
     }

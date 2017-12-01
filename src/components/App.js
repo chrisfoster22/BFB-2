@@ -120,7 +120,6 @@ class App extends Component {
     componentDidMount() {
         window.addEventListener("resize", this.updateDimensions.bind(this));
     }
-
     render() {
         let currentStep = this.state.steps[this.state.currentStep];
         let disabled = this.state.currentStep === 8 ? this.state.selection.customName.length === 0 :  currentStep.selection.length < 1
@@ -131,9 +130,10 @@ class App extends Component {
               <div className="App-mobile-logo" style={styles.logoContainer} >
                   <img style={styles.logo} src={logo} alt="Best Friend Beauty Logo"/>
               </div>
+                  <h1 className="App-header-text" style={{textAlign: "center", fontWeight: 300}}>{this.state.selection.customName}</h1>
                   <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
                   <div style={this.state.mobile ? {...styles.buttonContainer, ...styles.mobileBtnContainer } : styles.buttonContainer}>
-                      <Button link={true} hidden={false} click={this.prevStep.bind(this)} text="< Back"/>
+                      <Button link={true} hidden={false} click={this.prevStep.bind(this)} text={this.state.windowWidth > 400 ? "< Back" : "Back"} />
                       <Button
                           cartUrl={this.state.cartUrl}
                           disabled={disabled}
@@ -168,7 +168,7 @@ class App extends Component {
                         {this.getSelectionPanel.bind(this, currentStep)()}
                     </div>
                     <div style={this.state.mobile ? {...styles.buttonContainer, ...styles.mobileBtnContainer} : styles.buttonContainer}>
-                        <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text="< Back"/>
+                        <Button link={true} hidden={currentStep.type === "recipient"} click={this.prevStep.bind(this)} text={this.state.windowWidth > 400 ? "< Back" : "Back"}/>
                         <Button
                             cartUrl={(this.state.currentStep === 8 && !this.state.mobile) || (this.state.currentStep === 9) ? this.state.cartUrl : null}
                             disabled={disabled}
@@ -257,7 +257,7 @@ class App extends Component {
         switch(this.state.currentStep) {
             case 8:
                 return(
-                    <ChooseName selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
+                    <ChooseName height={this.state.selectorHeight} selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
                 )
             case 9:
                 return(
