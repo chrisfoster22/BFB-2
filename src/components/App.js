@@ -33,7 +33,8 @@ class App extends Component {
                 "oils": [],
                 "butters": [],
                 "boosters": [],
-                "customName": ""
+                "customName": "",
+                "checkout": "checkout"
             },
             steps: [
                 {
@@ -102,7 +103,7 @@ class App extends Component {
                 {
                     message: "Ready to checkout!",
                     selection: "done",
-                    type: null
+                    type: "checkout"
                 },
 
             ]
