@@ -14,6 +14,7 @@ import Products from '.././data/products';
 import ChooseName from './ChooseName';
 import Checkout from './Checkout';
 import SidePanel from './SidePanel';
+import DetailModal from './DetailModal';
 import Button from './Button';
 import ShopifyBuy from 'shopify-buy';
 
@@ -33,6 +34,10 @@ class App extends Component {
             panelHeight: 800,
             variantId: null,
             cartUrl: null,
+            modalHeading: "Hello",
+            modalMessage: "Welcome",
+            modalBtnText: "Get Started",
+            modalOpen: false,
             selection: {
                 recipient: "",
                 focusArea: "",
@@ -127,6 +132,7 @@ class App extends Component {
     }
 
     componentDidMount() {
+        this.toggleModal.bind(this)(null);
         window.addEventListener("resize", this.updateDimensions.bind(this));
         window.addEventListener("keypress", (e) => {
             var key = e.which || e.keyCode;
@@ -207,6 +213,7 @@ class App extends Component {
               <aside style={styles.sidePanelContainer} className="side-panel">
                     <SidePanel selection={this.state.selection} current={this.state.currentStep}/>
                 </aside>
+                <DetailModal modalHeading={this.state.modalHeading} modalMessage={this.state.modalMessage} open={this.state.modalOpen} modalBtnText={this.state.modalBtnText} click={this.toggleModal.bind(this)} />
             </div>
         );
     }
@@ -266,6 +273,15 @@ class App extends Component {
         newSteps[this.state.currentStep].selection = newSelection[step];
         this.setState({selection: newSelection, steps: newSteps });
     }
+    
+    toggleModal(item=null) {
+      if (item) {
+        console.log(item);
+          this.setState({modalOpen: !this.state.modalOpen, modalHeading: Products.descriptions[item].title, modalMessage: Products.descriptions[item].message})
+      } else {
+          this.setState({modalOpen: !this.state.modalOpen})
+      }
+    }
 
     getOptions() {
         switch(this.state.currentStep) {
@@ -310,7 +326,8 @@ class App extends Component {
                     options={this.getOptions()}
                     chooseProduct={this.chooseProduct.bind(this)}
                     unChooseProduct={this.unChooseProduct.bind(this)}
-                    selection={this.state.selection[currentStep.type]} />
+                    selection={this.state.selection[currentStep.type]}
+                    toggleModal={this.toggleModal.bind(this)} />
                 )
         }
     }
@@ -349,7 +366,7 @@ const styles = {
         bottom: 0,
         color: "#ffffff",
         fontWeight: 300,
-        zIndex: 1
+        zIndex: 0
     },
     headerMsg: {
         margin: "5px 0px 15px",

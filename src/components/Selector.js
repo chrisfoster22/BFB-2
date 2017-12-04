@@ -31,7 +31,8 @@ export default class Selector extends Component {
                     key={i}
                     option={option}
                     step={this.props.step}
-                    selected={selected} />
+                    selected={selected} 
+                    toggleModal={this.props.toggleModal}/>
             )
         });
         return(

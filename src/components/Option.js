@@ -8,15 +8,21 @@ export default class Option extends Component {
         let width = this.props.selected ? "60%" : 0;
         let fontWeight = ["none", "unscented"].indexOf(text) > -1 ? "bold" : 300;
         let borderRadius = this.props.step.limit ? 0 : "50%";
-
         return(
             <div style={{...styles.option, fontWeight: fontWeight}} onClick={this.onChoose.bind(this)}>
                 <span style={{...styles.optionBtn, borderRadius: borderRadius}}>
                     <span style={{...styles.selectedBtn, height: height, width: width, borderRadius: borderRadius}}></span>
                 </span>
-                <span>{text}</span>
+                <span style={{display: "flex", alignItems: "center"}}>{text}
+                    {this.props.step.type !== "recipient" && this.props.step.type !== "focusArea" && this.props.step.type !== "product" &&  <span style={styles.detailBtn} onClick={this.optionDetail.bind(this)}>?</span> }
+                </span>
             </div>
         )
+    }
+    
+    optionDetail() {
+      let text = this.props.option.name || this.props.option;
+      this.props.toggleModal(text)
     }
 
     onChoose() {
@@ -55,5 +61,16 @@ const styles = {
       height: 0,
       transition: "all .5s",
       backgroundColor: "#3F4345"
+  },
+  detailBtn: {
+      display: "inline-block",
+      height: "10px",
+      width: "10px",
+      border: "1px solid black",
+      borderRadius: "33px",
+      marginLeft: 5,
+      fontSize: "10px",
+      lineHeight: "12px",
+      textAlign: "center",
   }
 }

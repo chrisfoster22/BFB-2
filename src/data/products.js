@@ -384,6 +384,172 @@ const Products = {
         "sea buckhorn": "#FF7E00",
         "turmeric": "#FFB500",
         "valerian": "#AE6977"
+    },
+    descriptions: {
+        // scents
+        "chamomile": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "cinnamon": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "eucalyptus": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "frankincense": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "grapefruit": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "lavender": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "lemon": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "lemongrass": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "lime": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "marjoram": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "myrrh": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "orange": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "peppermint": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "rose": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "spearmint": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "tangerine": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "vanilla": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "vetiver": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "wintergreen": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "ylang ylang": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "unscented": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        // butters
+        "cocoa": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "kokum": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "mango": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "shea": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "none": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        // oils
+        "avocado": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "coconut": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "jojoba": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "olive": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "sweet almond": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        // boosters
+        "calendula": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "carrot seed": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "chickweed": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "dandelion": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "matcha green tea": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "raspberry seed": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "sea buckhorn": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "turmeric": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        },
+        "valerian": {
+            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
+            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+        }
     }
 }
 
