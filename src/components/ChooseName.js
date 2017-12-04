@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
-import ShopifyBuy from 'shopify-buy';
-
-var shopClient = ShopifyBuy.buildClient({
-  accessToken: '63e6175cca54c2980bc0cfd7e731a6e7',
-  domain: 'www.bestfriendbeauty.org',
-  appId: '6'
-});
 
 export default class ChooseName extends Component {
     
     constructor(props) {
         super(props);
-        this.state = {cartUrl: ""}
-        this.getProduct = this.getProduct.bind(this)
+        this.state = {cartUrl: "", focused: true}
     }
     
     componentWillMount() {
-        
-        this.getProduct(this.props.selection);
+        this.props.onChoose(`My Custom ${this.props.selection.product.name}`, this.formatUrl(this.props.selection.product.name))
+        // this.getProduct(this.props.selection);
     }
 
     render() {
         return(
             <div style={{...styles.chooseNameContainer, height: this.props.height}}>
-                <label style={this.state.focused ? {...styles.chooseNameLabel, top: 0} : styles.chooseNameLabel} htmlFor="product">Name Your Product</label>
-                <input onBlur={this.blur.bind(this)} onFocus={this.focus.bind(this)} style={styles.chooseNameInput} type="text" name="product" id="product" autoComplete="off" onChange={this.onTextChange.bind((this))} />
+                <label style={this.state.focused ? {...styles.chooseNameLabel, top: 0} : styles.chooseNameLabel} htmlFor="product">Give your custom creation a name</label>
+                <input value={this.props.selection.customName} onBlur={this.blur.bind(this)} onFocus={this.focus.bind(this)} style={styles.chooseNameInput} type="text" name="product" id="product" autoComplete="off" onChange={this.onTextChange.bind((this))} />
             </div>
         )
     }
@@ -43,26 +35,20 @@ export default class ChooseName extends Component {
         this.props.onChoose(e.target.value, this.formatUrl.bind(this)(e.target.value));
     }
     
-    getProduct(selection) {
-        shopClient.fetchProduct(selection.product.productId)
-        .then((product) => {
-            var variant = product.variants[0];
-            this.setState({variantId: variant.id})
-        })
-        .catch(function (e) {
-            console.log(e);
-        })
-    }
-    
     formatUrl(newName) {
         var note = this.formatNote(newName);
-        return `https://www.bestfriendbeauty.org/cart/add?id=${this.state.variantId}&note=${note}`;
+        return `https://www.bestfriendbeauty.org/cart/add?id=${this.props.variantId}${note}`;
     }
 
     formatNote(newName) {
       let selection = this.props.selection;
-      return `name: ${newName} %0Ascents: ${selection.scents.join(', ')}%0Abutters: ${selection.butters.join(', ')}%0Aoils: ${selection.oils.join(', ')}%0Aboosters: ${selection.boosters.join(', ')}`
+      return `&atrribute[name]=${newName}&properties[scents]=${selection.scents.join(', ')}&properties[butters]=${selection.butters.join(', ')}&properties[oils]=${selection.oils.join(', ')}&properties[boosters]=${selection.boosters.join(', ')}`
     }
+    
+    // formatNote(newName) {
+    //   let selection = this.props.selection;
+    //   return `name: ${newName} %0Ascents: ${selection.scents.join(', ')}%0Abutters: ${selection.butters.join(', ')}%0Aoils: ${selection.oils.join(', ')}%0Aboosters: ${selection.boosters.join(', ')}`
+    // }
 }
 
 const styles = {
@@ -85,6 +71,7 @@ const styles = {
         borderBottom: "1px solid #3F4345",
         margin: "10px auto",
         fontSize: 40,
-        fontWeight: 300
+        fontWeight: 300,
+        textTransform: "capitalize"
     }
 }

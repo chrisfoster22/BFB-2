@@ -14,7 +14,7 @@ export default class Selector extends Component {
   }
   
   componentWillMount() {
-      if (this.props.product && this.props.product.skip.indexOf(this.props.step.type > -1)) {
+      if (this.props.product && this.props.product.skip &&  this.props.product.skip.indexOf(this.props.step.type > -1)) {
           this.props.chooseProduct(this.props.step, "none", false, -1);
       }
   }

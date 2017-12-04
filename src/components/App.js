@@ -15,6 +15,13 @@ import ChooseName from './ChooseName';
 import Checkout from './Checkout';
 import SidePanel from './SidePanel';
 import Button from './Button';
+import ShopifyBuy from 'shopify-buy';
+
+var shopClient = ShopifyBuy.buildClient({
+  accessToken: '63e6175cca54c2980bc0cfd7e731a6e7',
+  domain: 'www.bestfriendbeauty.org',
+  appId: '6'
+});
 
 class App extends Component {
 
@@ -24,6 +31,7 @@ class App extends Component {
             windowWidth: 0,
             currentStep: 1,
             panelHeight: 800,
+            variantId: null,
             cartUrl: null,
             selection: {
                 recipient: "",
@@ -240,6 +248,10 @@ class App extends Component {
         } else {
             newSelection[step] = option;
         }
+        
+        if (option.productId) {
+          this.getProduct.bind(this)(option.productId)
+        }
 
         let newSteps = {...this.state.steps}
         newSteps[this.state.currentStep].selection = newSelection[step];
@@ -282,7 +294,7 @@ class App extends Component {
             case 8:
                 let height = this.state.selectorHeight + 69.327 + 60
                 return(
-                    <ChooseName height={height} selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
+                    <ChooseName variantId={this.state.variantId} height={height} selection={this.state.selection} onChoose={this.customizeName.bind(this)} />
                 )
             case 9:
                 return(
@@ -310,6 +322,17 @@ class App extends Component {
         let headerHeight = headerWidth / 2.4;
         let selectorHeight = window.innerHeight - headerHeight - 200;
         this.setState({headerHeight, selectorHeight, windowWidth, mobile})
+    }
+    
+    getProduct(productId) {
+        shopClient.fetchProduct(productId)
+        .then((product) => {
+            var variant = product.variants[0];
+            this.setState({variantId: variant.id})
+        })
+        .catch(function (e) {
+            console.log(e);
+        })
     }
 }
 
