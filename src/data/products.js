@@ -392,126 +392,118 @@ const Products = {
             message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
         },
         "cinnamon": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Cinnamon Bark Essential Oil (Cinnamomum Zeylanicum)",
+            message: "Promotes healthy circulation, aids in the maintenance of a healthy immune system, and helps to alleviate sore muscles and joints."
         },
         "eucalyptus": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Eucalyptus Essential Oil (Eucalyptus Globulus)",
+            message: "Aids in supporting respitory health, cleans surfaces and air, and promotes feelings of relaxation."
         },
         "frankincense": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Frankincense Essential Oil (Boswellia carterii)",
+            message: "Promotes feelings of peace, satisfaction, and overall wellness when used aromatically. Topicallysoothing and beautifying properties are used to rejuvenate skin and help reduce the appearance of imperfections. "
         },
         "grapefruit": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Grapefruit Essential Oil (Citrus Paradise)",
+            message: "Known as an energizing and invigorating aroma, Grapefruit helps promote positive mood. Grapefruit also has purifying properties, used in skin care for its ability to promote the appearance of clear, healthy-looking skin."
         },
         "lavender": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Lavender Essential Oil (Lavandula)",
+            message: "Helps to reduce anxiety and emotional stress, promotes healthy sleep, contains powerful antioxidants, and has calming and relaxation properties."
         },
         "lemon": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Lemon Essential Oil (Citrus Limon)",
+            message: "Promotes energized moods, and acts as a powerful natural cleansing agent."
         },
         "lemongrass": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Lemongrass Essential Oil (Cymbopogon Flexuosus)",
+            message: "Promotes healthy digestion and overall wellbeing. Acts as a purifying and toning agent to the skin."
         },
         "lime": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Lime Essential Oil (Citrus Aurantifolia)",
+            message: "Known for its cleansing and purification benefits, Promotes uplifting moods, balance, and energized mindset. Acts as a cleanser in facial and body products."
         },
         "marjoram": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Sweet Marjoram Essential Oil (Origanum Majorana)",
+            message: "Known for its calming properties, Promotes a healthy nervous system, and aids in the release of stress and anxiety."
         },
         "myrrh": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Myrrh Essential Oil (Commiphora Myrrha)",
+            message: "Commonly used as a perfume, incense, and health aid. Very soothing to the skin, and promotes a smooth, soft complexion. Used aromatically, it promotes emotional balance and well-being."
         },
         "orange": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Orange Essential Oil (Citrus Sinensis)",
+            message: "Support healthy immune system function, and serves as a natural cleanser. Used aromatically, it energizes the mind and body while purifying the air."
         },
         "peppermint": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Peppermint Essential Oil (Mentha Piperita)",
+            message: "Promotes healthy respitory function, and oral hygiene. Freshens breath, and acts as an anti-microbial. A refreshing scent often used in toothpaste and oral-care products."
         },
         "rose": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Rose Essential Oil (Rosa Damascena)",
+            message: "Helps maintain skin's pH balance, acts as an anti-Inflammatory, reduces redness of irritated skin, Aids in reducing acne, dermatitis, and eczema. Promotes hydrated, healthy-looking, revitalized skin."
         },
         "spearmint": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Spearmint Essential Oil (Mentha Spicata)",
+            message: "Promotes positive mood and focus with sweet, refreshing aroma. Milder than Peppermint, this is often the choice for children and those with sensitive skin."
         },
         "tangerine": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Tangerine Essential Oil (Citrus Reticulata)",
+            message: "Supports healthy digestion, and respitory system. Aromatically, the sweet, tangy aroma is uplifting known for its cleansing properties. Also aids in soothing anxious feelings."
         },
         "vanilla": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Vanilla Essential Oil (Vanilla Planifolia)",
+            message: "Promotes health, contains antioxidants, has antidepressant properties, and promotes tranquility. Often used in perfumes and fragrances for a sweet refreshing aroma."
         },
         "vetiver": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Vetiver Essential Oil (Vetiveria Zizanoides)",
+            message: "Promotes growth of new tissues in wounded areas of the body. Aids the body's natural defenses against infections, and inhibits microbe growth. Promotes healing of dry, cracked skin."
         },
         "wintergreen": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Wintergreen Essential Oil (Gaultheria Fragrantissima)",
+            message: "Contains methyl salicylate, used in topical creams because of its warming soothing properties. Aromatically, a refreshing, uplifting, and stimulating scent."
         },
         "ylang ylang": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
-        },
-        "unscented": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Ylang Ylang (Cananga Odorata)",
+            message: "Aromatic scent often used in perfumes, helps to alleviate tension, and stress. Has nourishing, and protective skin properties, with antioxidant support. Often blended with Grapefruit, and Vetiver."
         },
         // butters
         "cocoa": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Cocoa Butter (Theobroma Cacao)",
+            message: "Rich in vitamin K, vitamin E, and essential fatty acids. Promotes healing of chapped skin, and fights signs of aging, while preventing skin dryness, and peeling."
         },
         "kokum": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Kokum Butter (Garcinia Indica)",
+            message: "Rich in antioxidants, and helps to soften skin, and restores skin flexibility. Aids in preventing dry skin, reduce skin degeneration, and revitalize skin cells. "
         },
         "mango": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Mango Butter (Mangifera Indica)",
+            message: "Rich in vitamin C, vitamin A, and contains natural UV protection. Softens and soothes the skin, and aids in healing damage caused by sunburn. Promotes protection against environmental sressors, and calms insect bite, and poison ivy irration."
         },
         "shea": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
-        },
-        "none": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Shea Butter (Vitellaria Paradoxa)",
+            message: "Rich in vitamin A, vitamin D, and vitamin E including essential fatty acids. Promotes moisturized skin, and overall skin health."
         },
         // oils
         "avocado": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Avocado Oil (Persea Americana)",
+            message: "Rich in antioxidants, vitamin A, vitamin D, vitamin E. Aids in reduction of age spots, alleviates sun damaged skin, and promotes increase in collagen production. High in unsaturated fats, omega-3 fatty acids, and sterolin."
         },
         "coconut": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Coconut Oil (Cocos Nucifera)",
+            message: "Deep Penetrating Mosturizer, acts as an anti-analgesic, anti-inflammatory, anti-fungal, and aids in prevention of contact dermatitis. Helps to alleviate topical skin reactions to stings and bites. Promotes healing of wounds and cracked skin."
         },
         "jojoba": {
             title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            message: "Rich in vitamin E, and B complex vitamins. Helps to moisturize skin, prevents irritations, limits scaliness, and smoothes rough patches. Contains iodine which fights harmful bacteria growth. Supports skin health and collagen synthesis."
         },
         "olive": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Olive Oil (Olea Europaea)",
+            message: "Promotes skin healing, protection against harsh environmental toxins, and weather. Limits clogged pores. Acts as an allergy aid, and minimizes skin infections."
         },
         "sweet almond": {
-            title: "Chamomile Essential Oil (Chamaemelum Nobile)",
-            message: "Known for its calming properties, chamomile helps to relieve anxiety, promote sleep, act as a muscle relaxant, and supports the body's natural immune defenses."
+            title: "Sweet Almond Oil (Prunus Dulcis)",
+            message: "Deep Penetrating Mosturizer, Anti-Inflammatory, Aids in treatment of skin rashes, hypoallergenic, safe for sensitive skin. Helps protect skin against UV radiation damage, and reduces effects of UV damage. Soften dry skin, while balancing the amount of moisture skin maintains over time."
         },
         // boosters
         "calendula": {

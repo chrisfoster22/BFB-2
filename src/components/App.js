@@ -127,12 +127,14 @@ class App extends Component {
         let windowWidth = window.innerWidth;
         let mobile = windowWidth < 768;
         let headerHeight = windowWidth * .55 / 2.4
-        let selectorHeight = window.innerHeight - headerHeight - 200;
+        let selectorHeight = window.innerHeight - headerHeight - 100;
         this.setState({headerHeight, selectorHeight, windowWidth, mobile})
     }
 
     componentDidMount() {
-        this.toggleModal.bind(this)(null);
+        setTimeout(() => {
+            this.toggleModal.bind(this)(null);
+        }, 500)
         window.addEventListener("resize", this.updateDimensions.bind(this));
         window.addEventListener("keypress", (e) => {
             var key = e.which || e.keyCode;
@@ -277,7 +279,7 @@ class App extends Component {
     toggleModal(item=null) {
       if (item) {
         console.log(item);
-          this.setState({modalOpen: !this.state.modalOpen, modalHeading: Products.descriptions[item].title, modalMessage: Products.descriptions[item].message})
+          this.setState({modalOpen: !this.state.modalOpen, modalHeading: Products.descriptions[item].title, modalMessage: Products.descriptions[item].message, modalBtnText: "Thanks"})
       } else {
           this.setState({modalOpen: !this.state.modalOpen})
       }
@@ -337,7 +339,7 @@ class App extends Component {
         let mobile = windowWidth < 768;
         let headerWidth = this.state.currentStep < 9 ? ReactDOM.findDOMNode(this.header).getBoundingClientRect().width : 0
         let headerHeight = headerWidth / 2.4;
-        let selectorHeight = window.innerHeight - headerHeight - 200;
+        let selectorHeight = window.innerHeight - headerHeight - 100;
         this.setState({headerHeight, selectorHeight, windowWidth, mobile})
     }
     
@@ -366,7 +368,7 @@ const styles = {
         bottom: 0,
         color: "#ffffff",
         fontWeight: 300,
-        zIndex: 0
+        zIndex: 1
     },
     headerMsg: {
         margin: "5px 0px 15px",

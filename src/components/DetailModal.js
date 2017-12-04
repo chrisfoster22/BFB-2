@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export default class DetailModal extends Component {
 
     render() {
-      console.log(this.props.open);
         return(
             <div className="modal-container" style={this.props.open ? {opacity: 1} : {opacity: 0, pointerEvents: "none"}}>
                 <div className="modal">

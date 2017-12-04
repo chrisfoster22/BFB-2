@@ -69,19 +69,27 @@
 .modal-container {
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    transition: all .7s;
+    transition: all .4s;
     position: absolute;
     height: 100%;
     width: 100%;
+    z-index: 2;
 }
 
 .modal {
     position: relative;
     width: 50%;
-    height: 80vh;
     margin: 10vh auto;
     background-color: white;
     border: 1px solid black;
+}
+
+.modal-heading {
+  text-align: center;
+}
+
+.modal-message {
+  padding: 5% 10% 15%;
 }
 
 .modal-btn-container {

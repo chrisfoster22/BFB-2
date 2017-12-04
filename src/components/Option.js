@@ -14,7 +14,7 @@ export default class Option extends Component {
                     <span style={{...styles.selectedBtn, height: height, width: width, borderRadius: borderRadius}}></span>
                 </span>
                 <span style={{display: "flex", alignItems: "center"}}>{text}
-                    {this.props.step.type !== "recipient" && this.props.step.type !== "focusArea" && this.props.step.type !== "product" &&  <span style={styles.detailBtn} onClick={this.optionDetail.bind(this)}>?</span> }
+                    {["recipient", "focusArea", "product"].indexOf(this.props.step.type) === -1 && ["none", "unscented"].indexOf(text) === -1 && <span style={styles.detailBtn} onClick={this.optionDetail.bind(this)}>?</span> }
                 </span>
             </div>
         )

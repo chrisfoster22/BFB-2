@@ -42,7 +42,7 @@ export default class ChooseName extends Component {
 
     formatNote(newName) {
       let selection = this.props.selection;
-      return `&atrribute[name]=${newName}&properties[scents]=${selection.scents.join(', ')}&properties[butters]=${selection.butters.join(', ')}&properties[oils]=${selection.oils.join(', ')}&properties[boosters]=${selection.boosters.join(', ')}`
+      return `&properties[name]=${newName}&properties[scents]=${selection.scents.join(', ')}&properties[butters]=${selection.butters.join(', ')}&properties[oils]=${selection.oils.join(', ')}&properties[boosters]=${selection.boosters.join(', ')}`
     }
     
     // formatNote(newName) {
