@@ -20,7 +20,8 @@ export default class Option extends Component {
         )
     }
     
-    optionDetail() {
+    optionDetail(e) {
+      e.stopPropagation();
       let text = this.props.option.name || this.props.option;
       this.props.toggleModal(text)
     }
@@ -64,6 +65,8 @@ const styles = {
   },
   detailBtn: {
       display: "inline-block",
+      position: "relative",
+      zIndex: 3,
       height: "10px",
       width: "10px",
       border: "1px solid black",
